@@ -1,3 +1,6 @@
 [submodule "themes/minimo"]
 	path = themes/minimo
 	url = https://github.com/MunifTanjim/minimo.git
+[submodule "themes/typo"]
+	path = themes/typo
+	url = https://github.com/tomfran/typo.git
