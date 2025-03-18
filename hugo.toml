@@ -1,0 +1,99 @@
+baseURL = 'https://nykenik24.github.io/blog/'
+languageCode = 'en-us'
+title = 'Nykenik'
+theme = 'typo'
+
+# Google analytics code
+# googleAnalytics = "G-xxxxxxxxx"
+
+[taxonomies]
+tag = 'tags'
+
+[params]
+# Meta description
+description = "A programming blog"
+showFooter = true
+#footerContent = "Hey ya'! Visit my [**socials**](https://linktr.ee/nykenik24) or my [**github profile**](https://github.com/Nykenik24), if you want, obviously! Powered by **hugo** and **tomfran/typo**"
+footerContent = """
+Hey ya'! Visit my [**socials**](https://linktr.ee/nykenik24) or my [**github profile**](https://github.com/Nykenik24) (if you want, obviously!).
+This website is powered by [**hugo**](https://gohugo.io) and [**tomfran/typo**](https://github.com/tomfran/typo)
+"""
+
+# Appearance settings
+theme = 'auto'
+colorPalette = 'default'
+hideHeader = false
+
+# Intro on main page, content is markdown
+homeIntroTitle = 'Hey there!'
+homeIntroContent = """
+**Thanks for visiting my page!**
+
+I am Nykenik, a hobby programmer with interest for low-level systems, languages and game development. 
+I love languages like C, C++ and Go and use NeoVim + Linux.
+
+- To know more about me, visit the [about](/blog/about) page.
+- To see what I posted, visit the [posts](/blog/posts) page.
+- To see what projects I have made or I am working on, visit the [projects](/blog/projects) page.
+"""
+
+# Collection to display on home
+homeCollectionTitle = 'Posts'
+homeCollection = 'posts'
+
+# Lists parameters
+paginationSize = 100
+listSummaries = true
+listDateFormat = '2 Jan 2006'
+
+# Breadcrumbs
+[params.breadcrumbs]
+enabled = true
+showCurrentPage = true
+home = "Home"
+
+# Social icons
+[[params.social]]
+name = "github"
+url = "https://github.com/Nykenik24"
+
+[[params.social]]
+name = "youtube"
+url = "https://youtube.com/@nykenik24"
+
+[[params.social]]
+name = "itchdotio"
+url = "https://nykenik24.itch.io"
+
+# Main menu pages
+[[params.menu]]
+name = "home"
+url = "/blog/"
+
+[[params.menu]]
+name = "posts"
+url = "/blog/posts"
+
+[[params.menu]]
+name = "about"
+url = "/blog/about"
+
+[[params.menu]]
+name = "projects"
+url = "/blog/projects"
+
+# Syntax highlight on code blocks
+[markup]
+[markup.highlight]
+style = 'vulcan'
+
+# Giscus comments
+[params.giscus]
+enable = true
+repo = "Nykenik24/nykenik24.github.io"
+repoid = "R_kgDOOKsgFg"
+category = "General"
+categoryid = "DIC_kwDOOKsgFs4CoMDI"
+mapping = "pathname"
+theme = "noborder_gray"
+
