@@ -1,4 +1,4 @@
-baseURL = 'https://nykenik24.github.io/blog/'
+baseURL = 'https://nykenik24.github.io/'
 languageCode = 'en-us'
 title = 'Nykenik'
 theme = 'typo'
@@ -32,9 +32,9 @@ homeIntroContent = """
 I am Nykenik, a hobby programmer with interest for low-level systems, languages and game development. 
 I love languages like C, C++ and Go and use NeoVim + Linux.
 
-- To know more about me, visit the [about](/blog/about) page.
-- To see what I posted, visit the [posts](/blog/posts) page.
-- To see what projects I have made or I am working on, visit the [projects](/blog/projects) page.
+- To know more about me, visit the [about](/about) page.
+- To see what I posted, visit the [posts](/posts) page.
+- To see what projects I have made or I am working on, visit the [projects](/projects) page.
 """
 
 # Collection to display on home
@@ -68,19 +68,19 @@ url = "https://nykenik24.itch.io"
 # Main menu pages
 [[params.menu]]
 name = "home"
-url = "/blog/"
+url = "/"
 
 [[params.menu]]
 name = "posts"
-url = "/blog/posts"
+url = "/posts"
 
 [[params.menu]]
 name = "about"
-url = "/blog/about"
+url = "/about"
 
 [[params.menu]]
 name = "projects"
-url = "/blog/projects"
+url = "/projects"
 
 # Syntax highlight on code blocks
 [markup]
