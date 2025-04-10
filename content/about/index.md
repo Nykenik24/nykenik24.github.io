@@ -19,6 +19,6 @@ I live in Spain, so I am not a native english speaker. If you find any typos or 
 - To do basically everything, I use [Alacritty](https://alacritty.org/) as tty and [Zsh](https://www.zsh.org/index.html) as shell.
 
 ### Socials
-- I have an active [GitHub profile](https://github.com/Nykenik24), I commit there basically everythere.
+- I have an active [GitHub profile](https://github.com/Nykenik24), I commit there basically every day.
 - I also have an [itch.io profile](https://nykenik24.itch.io), but I didn't publish anything in a long time.
 - I have a [YouTube channel](https://youtube.com/@nykenik24), but it's dead. I may post devlogs in the future, if I get the confidence to do so.
