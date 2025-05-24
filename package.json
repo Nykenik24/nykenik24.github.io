@@ -1,0 +1,29 @@
+{
+  "name": "nykenik24.github.io",
+  "version": "0.0.1",
+  "description": "Nykenik24's own personal website and blog",
+  "main": "index.js",
+  "scripts": {
+    "serve": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nykenik24/nykenik24.github.io.git"
+  },
+  "keywords": [
+    "website",
+    "blog"
+  ],
+  "author": "Nykenik24",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nykenik24/nykenik24.github.io/issues"
+  },
+  "homepage": "https://github.com/Nykenik24/nykenik24.github.io#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.1",
+    "markdown-it": "^14.1.0"
+  }
+}

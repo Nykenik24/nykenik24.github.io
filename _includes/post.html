@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nykenik24</title>
+    <link href="/assets/css/style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://github.com/Nykenik24.png"
+    />
+  </head>
+
+  <body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css"
+    />
+
+    <div class="layout">
+      {% include "profile.html" %}
+
+      <main class="main-content">
+        <h1>{{ welcome_header }}</h1>
+        <p>{{ content | safe }}</p>
+      </main>
+
+      <div class="side-block">
+        <h3>Back to...</h3>
+        <a href="/">homepage</a>
+        <br />
+        <a href="/blog/">all posts</a>
+      </div>
+
+      {% include "links.html" %} {% include "footer.html" %} {% include
+      "dirs.html" %}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  </body>
+</html>

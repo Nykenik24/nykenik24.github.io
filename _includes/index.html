@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nykenik24</title>
+    <link href="/assets/css/style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://github.com/Nykenik24.png"
+    />
+  </head>
+
+  <body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css"
+    />
+
+    <div class="layout">
+      {% include "profile.html" %}
+
+      <main class="main-content">
+        <h1>{{ welcome_header }}</h1>
+        <p>{{ content | safe }}</p>
+        <br />
+        <h2>Things I like</h2>
+        <ul class="likings-list">
+          {% for thing in things_I_like %}
+          <li>{{ thing }}</li>
+          {% endfor %}
+        </ul>
+      </main>
+
+      <div class="side-block">
+        <h3>My stats</h3>
+        <ul class="no-bullet-list">
+          {% for stat in stats %} {% for key, value in stat %}
+          <li><span class="disabled">{{ key }}</span>: {{ value }}</li>
+          {% endfor %} {% endfor %}
+        </ul>
+      </div>
+
+      {% include "links.html" %} {% include "footer.html" %} {% include
+      "dirs.html" %}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  </body>
+</html>
