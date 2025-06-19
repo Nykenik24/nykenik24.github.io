@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nykenik24</title>
+    <link href="/assets/css/style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://github.com/Nykenik24.png"
+    />
+  </head>
+
+  <body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css"
+    />
+    <div class="layout">
+      <div class="side-block">
+  <img
+    src="https://github.com/Nykenik24.png"
+    alt="My GitHub profile picture"
+    class="profile-pic"
+  />
+  <p>
+    <span class="disabled">username</span>: Nykenik24
+    <br />
+    <span class="disabled">status</span>: Unknown
+    <br />
+    <span class="disabled">vitals</span>: Most likely fine
+  </p>
+  <h3>About me</h3>
+  <hr />
+  <p>
+    I am Nykenik, a hobby programmer with interest for low-level systems,
+    languages and game development. I love languages like C, C++ and Go and use
+    NeoVim + Linux.
+  </p>
+</div>
+
+
+      <main class="main-content">
+        <h2>LÖVE tools</h2>
+        <hr />
+        <p><p><a href="https://github.com/Nykenik24/love2d-tools">LÖVE tools</a>, or <code>love2d-tools</code>, is a series of LÖVE utilities, inspired by batteries.</p>
+<h3>Installation</h3>
+<ol>
+<li>Clone the repository</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/Nykenik24/love2d-tools.git</code></pre>
+<p>Or add it as a submodule <strong>(recommended)</strong></p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> submodule <span class="token function">add</span> https://github.com/Nykenik24/love2d-tools.git path/to/library</code></pre>
+<p>You can also download the latest release, but if you want the latest modules and features, i recomend cloning or adding as a submodule. I don’t make a release every time i add a module, only when i
+make patches or release various modules.</p>
+<ol start="2">
+<li>Require the library in your <code>main.lua</code> or the file where you load libraries.</li>
+</ol>
+<pre class="language-lua"><code class="language-lua">Tools <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"love2d-tools.lib"</span><span class="token punctuation">)</span>
+<span class="token comment">-- or you can require every module individually</span>
+Class <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"love2d-tools.modules.class"</span><span class="token punctuation">)</span></code></pre>
+<ol start="3">
+<li>Now you can use the library, all the modules are documented.</li>
+</ol>
+<pre class="language-lua"><code class="language-lua">Tools <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"love2d-tools.lib"</span><span class="token punctuation">)</span>
+ClassTool <span class="token operator">=</span> Tools<span class="token punctuation">.</span>class
+DebugTool <span class="token operator">=</span> Tools<span class="token punctuation">.</span>debug <span class="token comment">--note that lua already has a standard debug library, so don't name the module "debug".</span>
+TimerTool <span class="token operator">=</span> Tools<span class="token punctuation">.</span>timer
+
+MyClass <span class="token operator">=</span> <span class="token function">ClassTool</span> <span class="token punctuation">{</span>
+    smth <span class="token operator">=</span> <span class="token string">"Hello World!"</span><span class="token punctuation">,</span>
+    other_thing <span class="token operator">=</span> <span class="token number">5</span>
+<span class="token punctuation">}</span>
+MyClass_obj <span class="token operator">=</span> MyClass<span class="token punctuation">:</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+MyTimer <span class="token operator">=</span> <span class="token function">Timer</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token comment">--5 is the duration of the timer</span>
+MyTimer<span class="token punctuation">:</span><span class="token function">Update</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+MyTimer<span class="token punctuation">.</span>OnEnd <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token comment">--will be called every time the timer ends</span>
+    DebugTool<span class="token punctuation">.</span><span class="token function">Equal</span><span class="token punctuation">(</span>MyClass_obj<span class="token punctuation">.</span>other_thing<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span></code></pre>
+<h3>Modules</h3>
+<p>These are the modules it comes with:</p>
+<ul>
+<li><strong>OOP</strong> (<code>class</code>): Class system, has: objects <em>(obviously)</em>, subclasses, <em>“merging”</em> and <em>“cloning”</em> classes; etc.</li>
+<li><strong>Timer</strong> (<code>timer</code>): Allows to create timers, has an automatic <code>update</code> method and an <code>OnEnd</code> method that you can customize.</li>
+<li><strong>Input</strong> (<code>input</code>): Mouse/keyboard input helper.</li>
+<li><strong>MessageBus</strong> (<code>messagebus</code>): Message bus that handles publishers and suscribers. Made by <em><a href="https://github.com/zalanwastaken">zalanwastaken</a></em>.</li>
+<li><strong>StateMachine</strong> (<code>state</code>): State machine that handles: info, an update function, etc.</li>
+<li><strong>Easing</strong> (<code>easing</code>): Easing helper to make smoother movement or ease values. Licenses of used resources in the <a href="https://github.com/Nykenik24/love2d-tools/tree/main/licenses">licenses directory</a>.</li>
+<li><strong>Vector2</strong> (<code>vec2</code>): Simple vec2 system.</li>
+<li><strong>Mathx</strong> (<code>math</code>): Useful math functions not present in <code>lua</code> and <code>love2d</code>.</li>
+<li><strong>Tablex</strong> (<code>table</code>): Table handling extension. <strong>Category</strong>: Lua extensions.</li>
+<li><strong>Logger</strong> (<code>logger</code>): Logging module that uses a separate thread for minimum performance impact. Made by <em><a href="https://github.com/zalanwastaken">zalanwastaken</a></em>.</li>
+<li><strong>Debug</strong> (<code>debug</code>): Basic debug utility with assert functions.</li>
+<li><strong>Database</strong> (<code>database</code>): Database-like data managing system. Made by <em><a href="https://github.com/zalanwastaken">zalanwastaken</a></em>.</li>
+<li><strong>Set</strong> (<code>set</code>): Simple set implementation.</li>
+</ul>
+<h3>More</h3>
+<p>To read about contributing, the roadmap, etc., visit <a href="https://github.com/Nykenik24/love2d-tools">the GitHub repository</a></p>
+</p>
+      </main>
+
+      <div class="side-block">
+        <h3>Back to...</h3>
+        <a href="/">homepage</a>
+        <br />
+        <a href="/projects/">all projects</a>
+      </div>
+
+      <div class="side-block">
+  <h3>
+    Da Linkz
+    <span class="disabled"
+      ><em><small>sorry</small></em></span
+    >
+  </h3>
+  <ul class="no-bullet-list">
+    <li>
+      <a href="https://github.com/Nykenik24" target="_blank">GitHub Profile</a>
+    </li>
+  </ul>
+</div>
+ <div class="side-block">
+  <h4>Footer</h4>
+  <p>
+    Page's source at
+    <a href="https://github.com/Nykenik24/Nykenik24.github.io">GitHub</a>
+  </p>
+  <p>
+    Powered by <a href="https://www.11ty.dev/">eleventy</a>, hosted in
+    <a href="https://pages.github.com/">GitHub pages</a>
+  </p>
+</div>
+ <div class="side-block">
+  <h3>Directories</h3>
+  <ul class="no-bullet-list">
+    <li>
+      <span class="disabled">~/</span><a href="/blog/">blog</a><span class="disabled">/</span>
+    </li>
+    <li>
+      <span class="disabled">~/</span><a href="/projects/">projects</a><span class="disabled">/</span>
+    </li>
+  </ul>
+</div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.25.0/prism-lua.min.js"></script>
+;
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.25.0/prism-bash.min.js"></script>
+;
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.25.0/prism-cs.min.js"></script>
+;
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.25.0/prism-python.min.js"></script>
+;
+
+  </body>
+</html>
