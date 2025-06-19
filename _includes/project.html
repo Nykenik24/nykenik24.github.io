@@ -21,31 +21,20 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css"
     />
-
     <div class="layout">
       {% include "profile.html" %}
 
       <main class="main-content">
-        <h1>{{ welcome_header }}</h1>
+        <h2>{{ title }}</h2>
+        <hr />
         <p>{{ content | safe }}</p>
-        <br />
-        <ul>
-          {% for post in collections.posts %} {% if post.data.show %}
-          <li>
-            <a href="{{ post.url }}"
-              >{{ post.data.title }}
-              <small class="disabled"
-                >at {{ post.date | readableDate }}</small
-              ></a
-            >
-          </li>
-          {% endif %} {% endfor %}
-        </ul>
       </main>
 
       <div class="side-block">
         <h3>Back to...</h3>
         <a href="/">homepage</a>
+        <br />
+        <a href="/projects/">all projects</a>
       </div>
 
       {% include "links.html" %} {% include "footer.html" %} {% include

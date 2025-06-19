@@ -1,4 +1,4 @@
-module.exports = function (eleventyConfig) {
+module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
 
   const markdownIt = require("markdown-it");
@@ -15,14 +15,18 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPairedShortcode(
     "link_tooltip",
-    function (tooltip, link_name, link) {
+    function(tooltip, link_name, link) {
       return `<a src="${link}"><span title="${tooltip}">${link_name}</span></a>`;
     },
   );
 
-  eleventyConfig.addCollection("posts", function (collectionApi) {
+  eleventyConfig.addCollection("posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("content/posts/**/index.md");
   });
+
+  eleventyConfig.addCollection("projects", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("content/projects/**/index.md");
+  })
 
   const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
   eleventyConfig.addPlugin(syntaxHighlight);

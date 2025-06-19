@@ -14,19 +14,17 @@
       type="image/x-icon"
       href="https://github.com/Nykenik24.png"
     />
-  </head>
-
-  <body>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css"
     />
+  </head>
 
+  <body>
     <div class="layout">
       {% include "profile.html" %}
 
       <main class="main-content">
-        <h1>{{ welcome_header }}</h1>
         <p>{{ content | safe }}</p>
       </main>
 
@@ -40,7 +38,6 @@
       {% include "links.html" %} {% include "footer.html" %} {% include
       "dirs.html" %}
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    {% include "loadprism.html" %}
   </body>
 </html>
