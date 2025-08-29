@@ -1,4 +1,4 @@
-module.exports = function(eleventyConfig) {
+export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
 
   const markdownIt = require("markdown-it");
@@ -15,18 +15,18 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPairedShortcode(
     "link_tooltip",
-    function(tooltip, link_name, link) {
+    function (tooltip, link_name, link) {
       return `<a src="${link}"><span title="${tooltip}">${link_name}</span></a>`;
     },
   );
 
-  eleventyConfig.addCollection("posts", function(collectionApi) {
+  eleventyConfig.addCollection("posts", function (collectionApi) {
     return collectionApi.getFilteredByGlob("content/posts/**/index.md");
   });
 
-  eleventyConfig.addCollection("projects", function(collectionApi) {
+  eleventyConfig.addCollection("projects", function (collectionApi) {
     return collectionApi.getFilteredByGlob("content/projects/**/index.md");
-  })
+  });
 
   const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -42,4 +42,4 @@ module.exports = function(eleventyConfig) {
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
   };
-};
+}
