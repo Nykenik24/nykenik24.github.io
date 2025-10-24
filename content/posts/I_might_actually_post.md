@@ -9,7 +9,7 @@ tags: ["misc"]
 ### Welcome
 This is my blog, where I will rant about things that only people willing to read this will care about in a broken English because it's not even my main language. __Yes, if you already red that then you are cursed, sorry!__
 
-If you want to know more about and not about the blog, go [here](/about).
+If you want to know more about me and not about the blog, go [here](/about).
 
 ### This one WILL be active.
 Jokes aside, I've been wanting to make a blog months ago, but every time I tried I ended up forgetting, as I just posted perfectly crafted posts instead of posting like a real blogger (=everything that goes through my head and is mildly interesting I guess).
