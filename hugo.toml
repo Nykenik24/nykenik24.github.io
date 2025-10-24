@@ -11,7 +11,8 @@ description = "Some guy's programming"
 
 # Appearance settings
 theme = 'auto'
-colorPalette = 'default'
+colorPalette = 'base16-default'
+#colorPalette = 'default'
 hideHeader = false
 
 # Intro on main page, content is markdown
@@ -19,7 +20,7 @@ homeIntroTitle = 'Heya!'
 homeIntroContent = """
 I am a Spanish hobby programmer, with no commercial intentions, making OSS projects for fun.
 
-If you want to contact me mail <a src="mailto:Nykenik24@proton.me">Nykenik24@proton.me</a>.
+If you want to contact me through email [Nykenik24@proton.me](mailto:Nykenik24@proton.me).
 """
 
 # Collection to display on home
@@ -54,6 +55,10 @@ url = "/posts"
 [[params.menu]]
 name = "about"
 url = "/about"
+
+[[params.menu]]
+name = "projects"
+url = "/projects"
 
 # Syntax highlight on code blocks
 [markup]
