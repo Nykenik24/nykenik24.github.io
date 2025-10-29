@@ -11,8 +11,8 @@ description = "Some guy's programming"
 
 # Appearance settings
 theme = 'auto'
-colorPalette = 'base16-default'
-#colorPalette = 'default'
+#colorPalette = 'base16-default'
+colorPalette = 'default'
 hideHeader = false
 
 # Intro on main page, content is markdown
