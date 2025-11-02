@@ -3,7 +3,7 @@ title: "New project!!!"
 author: "Nykenik"
 date: 2025-11-02T22:10:06+01:00
 summary: "I FINALLY HAD AN IDEA!!!!"
-tags: ["idea"]
+tags: ["idea", "projects"]
 ---
 
 ### The idea
