@@ -1,8 +1,8 @@
 ---
-title: "You entered my lair."
-author: "Nykenik"
+title: "you entered my lair."
+author: "nykenik"
 date: 2025-10-24
-summary: "First post ;D."
+summary: "first post ;D."
 tags: ["misc"]
 ---
 

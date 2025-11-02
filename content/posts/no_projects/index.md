@@ -3,7 +3,7 @@ title: "No projects :("
 author: "Nykenik"
 date: 2025-10-29
 summary: "The adventure of having motivation but no ideas is... not a fun one."
-tags: ["projects", "ideas"]
+tags: ["misc", "sad"]
 ---
 
 ### New commits? In this economy?
