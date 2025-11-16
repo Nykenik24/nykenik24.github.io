@@ -4,7 +4,7 @@ author: Nykenik24
 date: 2025-11-16
 summary: "C is just better tbh."
 tags: []
-draft: true
+draft: false
 ---
 
 I have a bad reputation with C++, one so bad I just gave up using it.
