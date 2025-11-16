@@ -43,6 +43,18 @@ home = "Home"
 name = "github"
 url = "https://github.com/Nykenik24"
 
+[[params.social]]
+name = "itchdotio"
+url = "https://nykenik24.itch.io"
+
+[[params.social]]
+name = "protonmail"
+url = "mailto:Nykenik24@proton.me"
+
+[[params.social]]
+name = "youtube"
+url = "https://youtube.com/@nykenik24"
+
 # Main menu pages
 [[params.menu]]
 name = "home"
