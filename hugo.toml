@@ -78,8 +78,10 @@ url = "/tags"
 
 # Syntax highlight on code blocks
 [markup]
-[markup.highlight]
-style = 'onedark'
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    style = 'nordic'
 
 # Giscus comments
 [params.giscus]
