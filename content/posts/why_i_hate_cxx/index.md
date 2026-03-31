@@ -223,10 +223,48 @@ typedef struct {
 } Point;
 ```
 
+Done.
+
 And it's true that in C there are no contructors nor destructors, and that classes don't have public/private (because there aren't classes in C), but you can still see how huge a thing
 that should be so simple is in C++.
 
-Done.
+Although, a thing I have to admit is that this is the weakest point (at least how I explained it). Because, even if in C++ the declaration is
+more bloated, to create the object you do:
+
+```cpp
+Point p(2, 3);
+```
+
+While in C you have to always acknowledge memory, and decide if your `point` will be a stack object or an allocated one.
+
+If you choose allocating it, you will most likely end up making 2 functions: one to allocate a new point (our version of constructors?) and one
+to free it:
+
+```c
+#include <stdlib.h>
+
+Point* new_point(int x, int y) {
+    Point* p = malloc(sizeof(Point));
+    p->x = x;
+    p->y = y;
+    return p;
+}
+
+void free_point(Point* p) {
+    if (!p)
+        return;
+    // If your type has any allocated objects (or basically
+    // anything that has to be free'd) then you would free it
+    // here, also checking if it exists. Example:
+    // if (p->duped_str)
+    //     free(p->duped_str);
+    free(p);
+}
+```
+
+But note that in C++ most classes will declare templates, multiple methods, static members, private/public members, etc.,
+and also imply that in constructors, functions or templates you might encounter the problems mentioned beforehand. So,
+which one is better? You tell me, I think C is nicer, but this point is more subjective.
 
 ### Conclusions
 
