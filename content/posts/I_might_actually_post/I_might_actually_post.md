@@ -3,7 +3,7 @@ title: "you entered my lair."
 author: "nykenik"
 date: 2025-10-24
 summary: "first post ;D."
-tags: ["misc"]
+tags: ["Blog"]
 ---
 
 ### Welcome

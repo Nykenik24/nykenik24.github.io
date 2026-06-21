@@ -3,7 +3,7 @@ title: "Why I hate C++"
 author: Nykenik24
 date: 2025-11-16
 summary: "C is just better tbh."
-tags: []
+tags: ["Rant"]
 draft: false
 ---
 

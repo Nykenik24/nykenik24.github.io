@@ -3,7 +3,7 @@ title: "No ideas"
 author: Nykenik24
 date: 2025-12-04
 summary: "and even less motivation."
-tags: ["idea", "projects"]
+tags: ["Personal", "Project"]
 draft: false
 ---
 

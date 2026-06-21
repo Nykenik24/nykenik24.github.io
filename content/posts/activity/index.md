@@ -3,7 +3,7 @@ title: "Blog activity"
 author: "Nykenik"
 date: 2026-06-21T14:23:14+02:00
 summary: "revival?!?"
-tags: []
+tags: ["Blog"]
 draft: false
 ---
 

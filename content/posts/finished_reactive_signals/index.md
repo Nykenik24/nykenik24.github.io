@@ -3,7 +3,7 @@ title: "Finished reactive signals"
 author: Nykenik24
 date: 2026-03-01
 summary: "Reactive signals is done! Did it in ~2 hours!"
-tags: ["projects"]
+tags: ["Project", "Finished"]
 draft: false
 ---
 

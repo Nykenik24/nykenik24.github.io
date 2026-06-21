@@ -3,7 +3,7 @@ title: "MVM"
 author: Nykenik24
 date: 2026-03-01
 summary: "A project I recently finished."
-tags: ["idea", "projects"]
+tags: ["Project"]
 draft: false
 ---
 

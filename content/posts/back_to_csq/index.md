@@ -3,7 +3,7 @@ title: "Back to C²"
 author: Nykenik24
 date: 2026-03-17
 summary: "Arise, my child!"
-tags: ["projects"]
+tags: ["Project"]
 draft: false
 ---
 

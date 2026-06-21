@@ -1,0 +1,21 @@
+This is just to keep track of the tags I can use, you can ignore it :3
+
+By "type of post":
+* Rant
+* Guide
+* Blog
+* Personal
+* Project
+
+By language: too many languages to put them all here, although tags must use this format:
+`#Lang-<name>`
+where name:
+* must be all lowercase
+* if the language has various words in the name, they must be separated by underscores
+
+By branch of development:
+* Gamedev
+
+By state of development:
+* Work-in-Progress
+* Finished

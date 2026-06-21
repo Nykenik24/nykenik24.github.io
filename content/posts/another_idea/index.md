@@ -3,7 +3,7 @@ title: "Another idea"
 author: Nykenik24
 date: 2025-11-23
 summary: "rm -rf old_idea; mkdir new_idea && cd new_idea; nvim main.lua"
-tags: ["idea", "projects"]
+tags: ["Project", "Gamedev"]
 draft: false
 ---
 

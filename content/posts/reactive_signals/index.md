@@ -3,7 +3,7 @@ title: "Reactive signals"
 author: Nykenik24
 date: 2026-03-01
 summary: "A brand new project!"
-tags: ["idea", "projects"]
+tags: ["Project"]
 draft: false
 ---
 
