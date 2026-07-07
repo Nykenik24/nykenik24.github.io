@@ -81,7 +81,7 @@ url = "/tags"
   [markup.highlight]
     codeFences = true
     guessSyntax = false
-    style = 'nordic'
+    style = 'base16-snazzy'
 
 # Giscus comments
 [params.giscus]

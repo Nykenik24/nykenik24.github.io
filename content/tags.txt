@@ -6,9 +6,10 @@ By "type of post":
 * Blog
 * Personal
 * Project
+* Code
 
 By language: too many languages to put them all here, although tags must use this format:
-`#Lang-<name>`
+`Lang-<name>`
 where name:
 * must be all lowercase
 * if the language has various words in the name, they must be separated by underscores
