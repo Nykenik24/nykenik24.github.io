@@ -142,14 +142,14 @@ Send = A
 Receive = B
 ```
 
-Then if Bob receives a message from Alice (which was encrypted with `derived.Send`, which is `A`) he will try to decrypt it with `derived.Recive` (which is `B`), which will fail even though everything else went well as the keys don't match. __The one that first makes the handshake is the initiator.__
+Then if Bob receives a message from Alice (which was encrypted with `derived.Send`, which is `A`) he will try to decrypt it with `derived.Receive` (which is `B`), which will fail even though everything else went well as the keys don't match. __The one that first makes the handshake is the initiator.__
 
-That's why we reverse the order, so Alice has (normal order, as she's the initiator):
+That's why we reverse the order, so Alice has normal order, as she's the initiator:
 ```
 Send = A
 Receive = B
 ```
-and Bob has (reverse order, as he's the responder):
+and Bob has reverse order, as he's the responder:
 ```
 Send = B
 Receive A
@@ -248,7 +248,7 @@ counter, ciphertext, err := session.Encrypt(
 
 Decryption is also ultra simple, although it has one more step:
 1. Put the provided counter into a nonce (same `uint64` into a `[12]byte` buffer process).
-2. Check if the counter provided is the same as the receive counter of the session. If it's not, return an error, as it's probably a replayed attack or something else.
+2. Check if the counter provided is the same as the receive counter of the session. If it's not, return an error, as it's probably a replay attack or something else.
 3. Decipher the text. If it fails, then return the error.
 4. Return the deciphered text.
 
