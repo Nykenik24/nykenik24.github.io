@@ -4,7 +4,7 @@ author: "Nykenik"
 date: 2026-07-07T19:33:01+02:00
 summary: "and it was very fun!"
 tags: ["Project", "Code", "Lang-golang"]
-draft: true
+draft: false
 ---
 
 Right now I am working on a simple chat app, and I recently implemented this nice E2EE[^1] API which I will use to encrypt all messages and make the chat app more secure. Well, that when I have basic authorization.
