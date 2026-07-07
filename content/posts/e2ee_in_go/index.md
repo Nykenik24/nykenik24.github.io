@@ -11,6 +11,9 @@ Right now I am working on a simple chat app, and I recently implemented this nic
 
 So, let's analyze it together, shall we?
 
+> NOTE: all comments you see aren't in the source code, but I added them
+> for this article!
+
 ---
 
 ## Keypairs
@@ -23,8 +26,14 @@ type Keypair struct {
 }
 
 func GenKeypair() (*Keypair, error) {
+  // elliptic-curve
 	curve := ecdh.X25519()
 
+  // rand.Reader is an io.Reader instance present in standard
+  // crypto/rand package that allows for the generation of fixed-size
+  // cryptographically secure pseudo-random chains of bytes.
+  //
+  // ecdh.X25519().curve.GenerateKey always reads exactly 32 bytes.
 	priv, err := curve.GenerateKey(rand.Reader)
 	if err != nil {
 		return nil, err
@@ -49,6 +58,10 @@ To generate these keys I use `Curve25519`[^2] specifically, which I am using for
 
 After generating the keypairs the next step of DH[^3] is agreeing on a shared secret, which is very straightforward in my API:
 ```go
+// simple helper to convert a variable-size slice into a fixed-size Key, which
+// is an alias for [keyLen]byte, and keyLen is equal to 32. Meaning all keys must
+// be 32 bytes. I panic if the key isn't keyLen bytes long as this case is basically
+// impossible unless I make an error in-code
 func keyFromSlice(s []byte) Key {
 	if len(s) != keyLen {
 		panic(fmt.Sprintf("key slice must be %d bytes long exactly, it is %d bytes long", keyLen, len(s)))
@@ -66,6 +79,10 @@ func (k *Keypair) Agree(othersPub *ecdh.PublicKey) (shared Key, err error) {
 	}
 	shared = keyFromSlice(rawShared)
 
+  // in case you don't know, if the return values
+  // have names in Go as long as you assign them all
+  // before returning you can simply write an empty
+  // return and the values will be automatically filled in.
 	return
 }
 ```
@@ -91,20 +108,24 @@ We now have two public keys: Alice's and Bob's. These public keys are then deriv
 The function I use to derive the keys is HKDF[^5]:
 ```go
 type Derived struct {
-	Send    Key
-	Receive Key
+	Send    Key // the key used to encrypt sent messages
+	Receive Key // the key used to decrypt received messages
 }
 
 type DeriveRole uint8
 
 const (
-	RoleInitiator DeriveRole = iota
+	RoleInitiator DeriveRole = iota // first handshaker
 	RoleResponder
 )
 
 func Derive(sharedSecret Key, role DeriveRole) (*Derived, error) {
+  // uses sha256 to generate the HMAC hash for derivation
 	reader := hkdf.New(sha256.New, sharedSecret[:], nil, []byte(hkdfInfo))
 
+  // 32 * 2 = 64
+  // meaning the derived key will always be
+  // 64 bytes long
 	key := make([]byte, keyLen*2)
 	_, err := reader.Read(key)
 	if err != nil {
@@ -114,13 +135,18 @@ func Derive(sharedSecret Key, role DeriveRole) (*Derived, error) {
 	var send, recv []byte
 	switch role {
 	case RoleInitiator:
+    // send is first 32 bytes
+    // recv is last 32 bytes
 		send, recv = key[:keyLen], key[keyLen:]
 	case RoleResponder:
+    // send is last 32 bytes
+    // recv is first 32 bytes
 		send, recv = key[keyLen:], key[:keyLen]
 	default:
 		return nil, fmt.Errorf("unknown role %d", int(role))
 	}
 
+  // clear the key as it's no longer needed
 	clear(key)
 
 	return &Derived{keyFromSlice(send), keyFromSlice(recv)}, nil
@@ -219,8 +245,14 @@ Encryption is very straightforward:
 ```go
 func (s *Session) Encrypt(plaintext []byte, aad []byte) (uint64, []byte, error) {
 	var nonce Nonce
+  // puts the first 4 bytes (32 bits) of the counter into
+  // the 96-bit nonce buffer
 	binary.BigEndian.PutUint64(nonce[4:], s.sendCounter)
 
+  // store the counter as we can't pass the increased counter.
+  //
+  // passing s.sendCounter after incrementing it
+  // would break ALL the system
 	counter := s.sendCounter
 
 	ciphertext := s.sendAEAD.Seal(
