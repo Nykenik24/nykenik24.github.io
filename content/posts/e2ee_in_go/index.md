@@ -245,7 +245,7 @@ Encryption is very straightforward:
 ```go
 func (s *Session) Encrypt(plaintext []byte, aad []byte) (uint64, []byte, error) {
 	var nonce Nonce
-  // puts the first 4 bytes (32 bits) of the counter into
+  // puts the counter into the first 4 bytes of
   // the 96-bit nonce buffer
 	binary.BigEndian.PutUint64(nonce[4:], s.sendCounter)
 
