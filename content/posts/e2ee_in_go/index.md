@@ -86,7 +86,7 @@ If everything went well (all errors were `nil`), then Alice's secret should be t
 
 ## Derivation
 
-We now have two public keys: Alice's and Bob's. These public keys, to make nonce[^4] management easier. Derivation isn't mandatory, I just do it for convenience.
+We now have two public keys: Alice's and Bob's. These public keys are then derived, to make nonce[^4] management easier. Derivation isn't mandatory, I just do it for convenience.
 
 The way I derivate is through HKDF[^5]:
 ```go
