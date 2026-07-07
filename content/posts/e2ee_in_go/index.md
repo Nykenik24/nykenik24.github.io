@@ -1,5 +1,5 @@
 ---
-title: "I made End-to-End Encryption"
+title: "I implemented End-to-End Encryption"
 author: "Nykenik"
 date: 2026-07-07T19:33:01+02:00
 summary: "and it was very fun!"
