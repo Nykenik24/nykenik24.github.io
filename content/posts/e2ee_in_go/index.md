@@ -103,7 +103,7 @@ If everything went well (all errors were `nil`), then Alice's secret should be t
 
 ## Derivation
 
-We now have two public keys: Alice's and Bob's. These public keys are then derived, to make nonce[^4] management easier. Derivation isn't mandatory, I just do it for convenience.
+Now that we have the shared secret that both Alice and Bob agreed on we derive it to make nonce[^4] management easier. Derivation isn't mandatory, I just do it for convenience.
 
 The function I use to derive the keys is HKDF[^5]:
 ```go
