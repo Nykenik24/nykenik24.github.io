@@ -1,135 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nykenik24</title>
-    <link href="/assets/css/style.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="https://github.com/Nykenik24.png"
-    />
-  </head>
 
-  <body>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css"
-    />
+<head>
+	
+	<title>Andrei's corner</title>
+	
 
-    <div class="layout">
-      <div class="side-block">
-  <img
-    src="https://github.com/Nykenik24.png"
-    alt="My GitHub profile picture"
-    class="profile-pic"
-  />
-  <p>
-    <span class="disabled">username</span>: Nykenik24
-    <br />
-    <span class="disabled">status</span>: Unknown
-    <br />
-    <span class="disabled">vitals</span>: Most likely fine
-  </p>
-  <h3>About me</h3>
-  <hr />
-  <p>
-    I am Nykenik, a hobby programmer with interest for low-level systems,
-    languages and game development. I love languages like C, C++ and Go and use
-    NeoVim + Linux.
-  </p>
-</div>
+	<link rel="stylesheet" href="/assets/css/main.css">
+  <script src="/assets/js/main.js" defer></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/mocha.min.css">
+	<link rel="stylesheet" href="/assets/css/hjs.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+  <script>hljs.highlightAll();</script>
+</head>
+<body>
+	<main>
+    <header>
+      <a href="/">
+        <h1>Andrei&#39;s corner</h1>
+      </a>
+      <nav id="menu">
+    <ul><li>
+                <a no-transition href="/about/">about</a>
+            </li><li>
+                <a no-transition href="/blog/">blog</a>
+            </li><li>
+                <a no-transition href="/projects/">projects</a>
+            </li></ul>
+</nav>
+
+    </header>
+		
+	<p>Welcome to my portfolio! Here you will find:</p>
+<ul>
+<li><a href="/projects">My own personal blog</a>.</li>
+<li><a href="/projects">Projects I’ve done in the past or that are work in progress</a>.</li>
+<li><a href="/about">Information about me</a>.</li>
+</ul>
+<p><img src="/assets/images/avatar.gif" alt="avatar"></p>
 
 
-      <main class="main-content">
-        <h1>Hey there!</h1>
-        <p><p>Welcome to my website, where I will yap about code and share my projects, favourite music, additional things that I make (songs?), etc.</p>
-<p>I am not a native English speaker, so expect grammatical errors or constant typos, it’s normal. I am probably adding <a href="https://en.wikipedia.org/wiki/Internationalization_and_localization">i18n</a> later.</p>
-</p>
-        <br />
-        <h2>Things I like</h2>
-        <ul class="likings-list">
-          
-          <li>coding</li>
-          
-          <li>cats</li>
-          
-          <li>Linux</li>
-          
-          <li>C</li>
-          
-          <li>listening to MF DOOM</li>
-          
-          <li>Spain</li>
-          
-          <li>existing</li>
-          
-        </ul>
-      </main>
+    <footer>
+      <div class="social"><a href="https://codeberg.org/nykenik24" target="_blank">Codeberg</a><a href="https://github.com/nykenik24" target="_blank">GitHub</a><a href="/page-info" target="_blank">Page info.</a></div>
+    </footer>
+	</main>
+</body>
 
-      <div class="side-block">
-        <h3>My stats</h3>
-        <ul class="no-bullet-list">
-           
-          <li><span class="disabled">name</span>: [REDACTED]</li>
-            
-          <li><span class="disabled">age</span>: NaN</li>
-            
-          <li><span class="disabled">location</span>: Vim, 9th ring</li>
-           
-        </ul>
-      </div>
-
-      <div class="side-block">
-  <h3>
-    Da Linkz
-    <span class="disabled"
-      ><em><small>sorry</small></em></span
-    >
-  </h3>
-  <ul class="no-bullet-list">
-    <li>
-      <a href="https://github.com/Nykenik24" target="_blank">GitHub Profile</a>
-    </li>
-  </ul>
-</div>
- <div class="side-block">
-  <h4>Footer</h4>
-  <p>
-    Page's source at
-    <a href="https://github.com/Nykenik24/Nykenik24.github.io">GitHub</a>
-  </p>
-  <p>
-    Powered by <a href="https://www.11ty.dev/">eleventy</a>, hosted in
-    <a href="https://pages.github.com/">GitHub pages</a>
-  </p>
-</div>
- <div class="side-block">
-  <h3>Directories</h3>
-  <ul class="no-bullet-list">
-    <li>
-      <span class="disabled">~/</span><a href="/blog/">blog</a><span class="disabled">/</span>
-    </li>
-    <li>
-      <span class="disabled">~/</span><a href="/projects/">projects</a><span class="disabled">/</span>
-    </li>
-  </ul>
-</div>
-
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.25.0/prism-lua.min.js"></script>
-;
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.25.0/prism-bash.min.js"></script>
-;
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.25.0/prism-cs.min.js"></script>
-;
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.25.0/prism-python.min.js"></script>
-;
-
-  </body>
 </html>

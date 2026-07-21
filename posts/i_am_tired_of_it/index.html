@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	
+	<title>No ideas - Andrei's corner</title>
+	
+
+	<link rel="stylesheet" href="/assets/css/main.css">
+  <script src="/assets/js/main.js" defer></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/mocha.min.css">
+	<link rel="stylesheet" href="/assets/css/hjs.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+  <script>hljs.highlightAll();</script>
+</head>
+<body>
+	<main>
+    <header>
+      <a href="/">
+        <h1>Andrei&#39;s corner</h1>
+      </a>
+      <nav id="menu">
+    <ul><li>
+                <a no-transition href="/about/">about</a>
+            </li><li>
+                <a no-transition href="/blog/">blog</a>
+            </li><li>
+                <a no-transition href="/projects/">projects</a>
+            </li></ul>
+</nav>
+
+    </header>
+		
+	<p>Last sunday I was peacefully starting the development of my latest “project”: Kill the queen. Remember <a href="/posts/another_idea">this post</a>, where I talk about this game I was going to make? Well, you probably know where this went.</p>
+<p>If you don’t, 5 words: <strong>I abandoned yet another project</strong>.</p>
+<pre><code>iusearchbtw :: ~/Projects » ls -lah archives
+total 669M
+beryll.zip cardinal.zip cocoa.zip conversible.zip glint.zip
+noble.zip pico86.zip  pine.zip psychics.zip textual.zip
+through_the_swamp.zip titanium.zip trout.zip vanadium.zip Zap.zip
+</code></pre>
+<p><em>Yes, my device name is <code>iusearchbtw</code>, sorry for that.</em></p>
+<p>I imagine someone will still ask “What’s that?” even if this blog is literally a programming blog, but well, I’ll be inclusive. Basically, that’s the folder where I store all my abandoned projects.</p>
+<p>Instead of just <code>rm -rf</code>ing them, I zip them and store them there. So, 669MB of abandoned projects across <strong>18 project archives</strong>. By the way, these are not all projects I abandoned, just the ones I archived.</p>
+<p>This is a worrying thing, like really. In 2 years I abandoned more than 18 projects, while a casual developer in that time frame would probably finish that quantity projects.</p>
+<h2 id="the-reason." tabindex="-1"><a class="header-anchor" href="#the-reason.">The reason.</a></h2>
+<p>This HAS to stop. And I know how to stop it, fortunately.</p>
+<p>I always abandon (let’s hope I can finally say abandoned) projects because either:</p>
+<ul>
+<li>The project was too ambitious.</li>
+<li>Bad planning.</li>
+<li>No motivation.</li>
+<li>Bad idea.</li>
+</ul>
+<p>The most common ones are no motivation and bad planning, although I have to say I have a rush of motivation at the start and then it starts horribly (bad planning) and I lose it all.</p>
+<p>And, being honest, I hate abandoning projects <em>a lot</em>.</p>
+<p>It might seem counterintuitive: like, if I hate it so much, then why do I still abandon so many projects? And, I will answer with a simple:
+<strong>Because its impossible not to.</strong></p>
+<p>When I abandon a project, I do it because my motivation drops to dead 0.</p>
+<h2 id="the-solution" tabindex="-1"><a class="header-anchor" href="#the-solution">The solution</a></h2>
+<p>Well, obviously, revolution: the only solution.</p>
+<p>SOAD aside, there is a very simple solution: plan it properly, instead of just thinking about a vage and stupid idea and trying to instantly execute it perfectly, actually follow a process, do my research and, most importantly, make an actually good idea.</p>
+<h2 id="the-idea." tabindex="-1"><a class="header-anchor" href="#the-idea.">The idea.</a></h2>
+<p>Remember that list of archives? Well, if you don’t, then don’t worry, its a bit pointless memorizing a list of zip files with names that you don’t understand.</p>
+<p>Well, from that list, 5 archives were programming languages (these are the ones I archived, there are more):</p>
+<blockquote>
+<p>Fun fact: my dumb ass wrote “where” instead of “were” initially in the last phrase, read the phrase 4 times and still didn’t notice I wrote “where” lol.</p>
+</blockquote>
+<ul>
+<li>Cocoa: It was so short I honestly don’t remember it’s original purpose lol.</li>
+<li>Glint: Small scripting language made in Lua.</li>
+<li>Noble: Java-like language without it’s inmense complexity made in C.</li>
+<li>Titanium: I vagely remember it was a language similar to C or Zig made in Zig.</li>
+<li>Vanadium: The longest lasting one (still stopped not even half the way), a “revolutionary” language prioritizing “robustness” and “safety” (all bullshit tbh).</li>
+</ul>
+<p>See a pattern? No? Well, obviously the pattern is that there is no pattern.</p>
+<p>I always tried to make something different from the other prior language projects.</p>
+<blockquote>
+<p>By the way, there will be some programming language terms like lexer or parser, if you don’t know what they are, don’t worry, you just need to know that:</p>
+<ul>
+<li>A lexer is the most simple step which separates code into “tokens”</li>
+<li>The parser basically converts plain text into a tree full of nodes.</li>
+</ul>
+</blockquote>
+<p>If we look into development you <em>can</em> see some obvious patterns (although I am the only person that actually knows how development of these went, so don’t think you were going to find them lmao):</p>
+<ul>
+<li>Scope creep (terrible one). Like, I tried to make whole specs/documentations of the languages before even having a lexer made.</li>
+<li>Over engineering for everything. A clear example is how I handled parsers: never got farther than that, always abandoned while I was making the parser (I hate parsers <strong>RAHHHH</strong>), as I always wanted to make helpers and types beforehand, instead of drafting a quick but working parser and later refactoring like a normal developer.</li>
+<li>Bad design.</li>
+<li>Bloat (dependencies).</li>
+<li>Choosing languages I don’t know enough about to make a whole language.</li>
+</ul>
+<p>So, if you learn about your errors, and I had lots of errors across 5 (probably 6, I remember a shell language that I didn’t archive) iterations, so I guess I learned enough.</p>
+<h3 id="the-project." tabindex="-1"><a class="header-anchor" href="#the-project.">The project.</a></h3>
+<blockquote>
+<p>“Finally, the yapping stops! This guy should really shut up a bit, am I right?” <br>
+<em>You, probably</em>.</p>
+</blockquote>
+<p>So, I am making a programming language. WAIT, don’t throw tomatoes, I am NOT abandoning this on, I learned from the past.</p>
+<p>Rules are:</p>
+<ul>
+<li><strong>NO ABANDONING!</strong> Sorry, but in Nykenik, co. (ficticious company don’t sue me pretty please) we adopted the euphemism “rethink” to replace the horrible word “ab*ndon”. This project doesn’t just “e*d” with a “motivation l*ss”, it will be <strong>rethought</strong>, <strong>refactored</strong> or <strong>redesigned</strong>.</li>
+<li>I will manage my time so I don’t work all day on it, while also dedicating enough time. Yes, this is a rule, because these are rules for myself, and I am the owner of the blog B).</li>
+<li>One devlog per week minimum.</li>
+<li>Keep it in one repository without a website until I have v1.0 (or when I feel it’s good enough to get it’s own website and other expansions). Might seem a useless rule, but it’s necessary for me.</li>
+<li>Keep a roadmap with only superficial milestones (for example “Complete lexical analysis” [lexer and parser], “Complete compiler/interpreter”, etc.)</li>
+</ul>
+<p>Some info (not sharing a lot because I changed and scope creep and over promising are terminally prohibited in this project.):</p>
+<ul>
+<li>I will upload it to my brother’s <em>Forgejo</em> because I hate AI and don’t want it to train on my code, so no GitHub.</li>
+<li>I will probably make it in C, and if that doesn’t work then let’s see what I do.</li>
+<li>As I didn’t post last week, next two days (Friday 5/12 and Saturday 6/12) will be dedicated to research and design, and Sunday I will share what I did as a devlog in it’s own <a href="/projects/">project section</a>.</li>
+<li>I don’t have a name right now, I have to think about it. The name will be revealed in sunday’s devlog.</li>
+</ul>
+<p><strong>Let’s hope this goes well.</strong></p>
+<blockquote>
+<p>By the way, if you are a reader (proably the only one), please show proof that you are alive, like, an email to my mail (<a href="mailto:nykenik24@proton.me">nykenik24@proton.me</a>) saying “hi you blog is cool :)”/“hi your blog is bad haha” (preferrably the first one, please) is enough.</p>
+</blockquote>
+
+
+    <footer>
+      <div class="social"><a href="https://codeberg.org/nykenik24" target="_blank">Codeberg</a><a href="https://github.com/nykenik24" target="_blank">GitHub</a><a href="/page-info" target="_blank">Page info.</a></div>
+    </footer>
+	</main>
+</body>
+
+</html>

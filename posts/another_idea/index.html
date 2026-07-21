@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	
+	<title>Another idea - Andrei's corner</title>
+	
+
+	<link rel="stylesheet" href="/assets/css/main.css">
+  <script src="/assets/js/main.js" defer></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/mocha.min.css">
+	<link rel="stylesheet" href="/assets/css/hjs.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+  <script>hljs.highlightAll();</script>
+</head>
+<body>
+	<main>
+    <header>
+      <a href="/">
+        <h1>Andrei&#39;s corner</h1>
+      </a>
+      <nav id="menu">
+    <ul><li>
+                <a no-transition href="/about/">about</a>
+            </li><li>
+                <a no-transition href="/blog/">blog</a>
+            </li><li>
+                <a no-transition href="/projects/">projects</a>
+            </li></ul>
+</nav>
+
+    </header>
+		
+	<p>Recently I made <a href="/posts/new_project">this post</a> where I talked about a new project idea I had.</p>
+<p>Last sunday I started making it, and quickly noticed that I don’t like it. I just don’t want to make a daemon right now, maybe I will revive the idea sometime, but for now, I’ve got a new fun idea: a game!</p>
+<h1 id="table-of-contents" tabindex="-1"><a class="header-anchor" href="#table-of-contents">Table of contents</a></h1>
+<ol>
+<li><a href="#the-first-concept">The (first) concept</a></li>
+<li><a href="#making-it-an-actual-roguelike">Making it an actual roguelike</a>
+<ol>
+<li><a href="#in-betweenintermission-rounds">In-between/intermission rounds</a></li>
+<li><a href="#abilities-instead-of-">Abilities instead of modifiers</a></li>
+<li><a href="#more">More?</a></li>
+</ol>
+</li>
+</ol>
+<h2 id="the-(first)-concept" tabindex="-1"><a class="header-anchor" href="#the-(first)-concept">The (first) concept</a></h2>
+<p>Long ago I thought (like really, I never did something, I just had the idea) about this game called “Kill the queen” (might that be a reference?), a very simple but fun concept. The game basically was a round-based roguelike with one sole objective that you can already predict: killing the queen. What queen? I don’t know, the square queen or something like that. The queen spawned when you arrived to level 100.</p>
+<p>To help you in the journey you had three modifiers, <strong>but only three</strong>. These modifiers basically served as abilities that changed the projectiles you shot or added some effect to them, for example a “cluster” modifier that made your projectile slower and bigger, and when it hits something it splits into 4 smaller and faster projectiles.</p>
+<p>These modifiers were stackable, meaning that you could have two clusters that make the first projectile even bigger and slower but every projectile it splits into also splits into 4, or have cluster and explosive so the smaller projectiles explode on hit.</p>
+<p>Modifiers were adquired by defeating a mini boss, which appears every 3-5 XP levels, and overall difficulty increases when you defeat a boss, which appears every 20 levels. When difficulty increases, rarity of modifiers you can get also does.</p>
+<p>Visually, as I am not an artist, I wanted to make it just with basic shapes, like <em>Just Shapes &amp; Beats</em>.</p>
+<h2 id="making-it-an-actual-roguelike." tabindex="-1"><a class="header-anchor" href="#making-it-an-actual-roguelike.">Making it an actual roguelike.</a></h2>
+<p>In the old version the game was more arcade than roguelike: round after round of decimating enemies to get more XP. But, if I call the game a roguelike, why not make it an actual roguelike? So, I present some ideas that might make the game more enjoyable and replayable (but also harder to develop D:).</p>
+<h3 id="in-between%2Fintermission-rounds" tabindex="-1"><a class="header-anchor" href="#in-between%2Fintermission-rounds">In-between/intermission rounds</a></h3>
+<p>The original concept had this loop:</p>
+<pre><code class="language-mermaid">flowchart TD
+    Start[&quot;Start round&quot;] --&gt; Kill[&quot;Kill all enemies on screen&quot;]
+    Kill --&gt; Level[&quot;Level up and get new skills&quot;] --&gt; End[&quot;End round&quot;]
+    End --&gt; Start
+</code></pre>
+<p>Which is okay, but makes it feel more like pong and less like Risk of Rain 2 (not saying I am trying to copy RoR2), plus all engagement has to come from the killing all enemies and leveling up parts, which means that if someone plays some rounds and those two things don’t catch them then they’ll never touch the game again.</p>
+<p>So that’s why I want to redesign it to this:</p>
+<pre><code class="language-mermaid">flowchart TD
+    Start[&quot;Start round&quot;] --&gt; Kill[&quot;Kill all enemies on screen&quot;]
+    Kill --&gt; Level[&quot;Level up and get new skills&quot;] --&gt; End[&quot;End round&quot;]
+    End --maybe--&gt; Intermission[&quot;Special in-between round type&quot;]
+    Intermission --&gt; Start
+    End --if no intermission--&gt; Start
+</code></pre>
+<p>If the flowchart isn’t clear enough:</p>
+<ol>
+<li>Start a new round.</li>
+<li>Main gameplay (using your skillset to clear the screen).</li>
+<li>Either:</li>
+</ol>
+<ul>
+<li>Start an intermission round (I’ll talk about types of intermission rounds later).</li>
+<li>Start a new normal round.</li>
+</ul>
+<p><a href="http://I.Rs">I.Rs</a> (Intermission Round[s]) will always have a small-ish chance of appearing after every round (so yes, you could get <a href="http://I.Rs">I.Rs</a> after every normal round if you are <strong>REALLY</strong> lucky).</p>
+<p>They will also <strong>always</strong> appear after boss rounds.</p>
+<p>There will be various types of <a href="http://I.Rs">I.Rs</a>, for now they will be:</p>
+<ul>
+<li><strong>Chance altar</strong>: gamble off a skin for a small chance to gain much better one, but a big one of loosing it completely.</li>
+<li><strong>Challenge room</strong>: either start a new round or go to a challenge that gives you high rarity skills, you choose.</li>
+</ul>
+<h3 id="abilities-instead-of-%E2%80%9Cmodifiers%E2%80%9D." tabindex="-1"><a class="header-anchor" href="#abilities-instead-of-%E2%80%9Cmodifiers%E2%80%9D.">Abilities instead of <em>“modifiers”</em>.</a></h3>
+<p>Modifiers were always passive, meaning that it was more of a vampire survivors type of thing. In the new concept I want to change modifiers to skills/abilities (most likely calling them skills in-game).</p>
+<p>There are two types of skills: passive and active. Passive skills will change stats <em>passively</em> as long as the skill is in the skillset, while active skills must be explicitly activated by the player and give temporal advantages or special attacks.</p>
+<p>Also, skills have various properties, this is the concept of a “skill card” I have:
+<img src="./images/skillcard.png#dark#small" alt="Skill card concept" title="Note that this is just a concept of how a skill card could look in-game"></p>
+<p>This is an example of a skill card:
+<img src="./images/skillcard_example.png#dark#small" alt="Skill card example"></p>
+<p>Let’s analyze it!</p>
+<ul>
+<li><strong>Rarity</strong>: each skill has a rarity value, as you progress you will get cards with more rarity, and cards with higher rarity are better than cards less rare.</li>
+<li><strong>Description</strong>: do I have to explain this one? I mean, it’s pretty obvious. Okay, okay, I will: the description briefly tells what the skill does.</li>
+<li><strong>Buffs &amp; debuffs</strong>: to balance the game, skills have buffs and debuffs. Buffs will <strong>passively enchance</strong> stats, while debuffs will <strong>passively worsen</strong> stats.</li>
+<li><strong>Damage type</strong>: damage types are one of those things that, if I explain them right now, would make the blog post ultra long, because there is a lot to say about the design, so I will explain it briefly: each skill has a damage type, which can be neutral (or “normal” damage, basically no special effects, it’s just damage), fire, electrical, among others. Enemies can be strong (or even immune) to some damages and weak to others.</li>
+</ul>
+<h3 id="more%3F" tabindex="-1"><a class="header-anchor" href="#more%3F">More?</a></h3>
+<p>There’s so much more I want to comment, but if I did then the post would be too long (and I would also not be able to post it today), so I will give small updates <a href="/projects/kill_the_queen">here</a> in the form of devlogs with new things I implement and new concepts I have.</p>
+<p><strong>Let’s hope this project goes well.</strong></p>
+
+
+    <footer>
+      <div class="social"><a href="https://codeberg.org/nykenik24" target="_blank">Codeberg</a><a href="https://github.com/nykenik24" target="_blank">GitHub</a><a href="/page-info" target="_blank">Page info.</a></div>
+    </footer>
+	</main>
+</body>
+
+</html>

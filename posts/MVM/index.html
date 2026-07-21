@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	
+	<title>MVM - Andrei's corner</title>
+	
+
+	<link rel="stylesheet" href="/assets/css/main.css">
+  <script src="/assets/js/main.js" defer></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/mocha.min.css">
+	<link rel="stylesheet" href="/assets/css/hjs.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+  <script>hljs.highlightAll();</script>
+</head>
+<body>
+	<main>
+    <header>
+      <a href="/">
+        <h1>Andrei&#39;s corner</h1>
+      </a>
+      <nav id="menu">
+    <ul><li>
+                <a no-transition href="/about/">about</a>
+            </li><li>
+                <a no-transition href="/blog/">blog</a>
+            </li><li>
+                <a no-transition href="/projects/">projects</a>
+            </li></ul>
+</nav>
+
+    </header>
+		
+	<p>So, this week I’ve worked in a project called <em>MVM (Minuscule Virtual Machine)</em>,
+a register-based program VM which has:</p>
+<ul>
+<li>It’s own very simple architecture.</li>
+<li>A small assembler.</li>
+<li>7 registers, flags, conditions, etc.</li>
+</ul>
+<h2 id="example" tabindex="-1"><a class="header-anchor" href="#example">Example</a></h2>
+<pre><code class="language-nasm">LDI 1, 10
+JPT ; jump point 1
+  ADDI 0, 1, 0
+  PUTN 0
+  CEQ 0, 1 ; R0 == 10
+  JF 1 ; jump to 1
+</code></pre>
+<p>Line-by-line:</p>
+<ol>
+<li>Sets the register 1 to <em>10</em>.</li>
+<li>Defines <em>jump point</em> 1, which allows us to jump there at any moment.</li>
+<li>Adds 1 to register 0’s value, and stores the result in register 0
+(incrementing it by 1).</li>
+<li>Outputs the value of register 0.</li>
+<li>Checks if register 0’s value equals register 1’s value (10).</li>
+<li>If it’s not equal, it jumps to the jump point we defined before.</li>
+</ol>
+<h2 id="architecture" tabindex="-1"><a class="header-anchor" href="#architecture">Architecture</a></h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Params</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HALT</td>
+<td>Stops execution</td>
+<td><em>None</em></td>
+</tr>
+<tr>
+<td>LD</td>
+<td>Loads a value from memory into a register</td>
+<td><code>reg</code>, <code>offset</code></td>
+</tr>
+<tr>
+<td>LDI</td>
+<td>Loads an immediate value into a register</td>
+<td><code>reg</code>, <code>imm</code></td>
+</tr>
+<tr>
+<td>ST</td>
+<td>Stores a register into memory</td>
+<td><code>reg</code></td>
+</tr>
+<tr>
+<td>ADD</td>
+<td>Adds <code>reg0</code> and <code>reg1</code> and stores the value at <code>reg2</code></td>
+<td><code>reg0</code>, <code>reg1</code>, <code>reg2</code></td>
+</tr>
+<tr>
+<td>ADDI</td>
+<td>Adds <code>reg0</code> and <code>imm</code> and stores the value at <code>reg1</code></td>
+<td><code>reg0</code>, <code>reg1</code></td>
+</tr>
+<tr>
+<td>SUB</td>
+<td>Subtracts <code>reg1</code> from <code>reg0</code> and stores the value at <code>reg2</code></td>
+<td><code>reg0</code>, <code>reg1</code>, <code>reg2</code></td>
+</tr>
+<tr>
+<td>SUBI</td>
+<td>Subtracts <code>imm</code> from <code>reg0</code> and stores the value at <code>reg1</code></td>
+<td><code>reg0</code>, <code>imm</code>, <code>reg1</code></td>
+</tr>
+<tr>
+<td>MUL</td>
+<td>Multiplies <code>reg0</code> and <code>reg1</code> and stores the value at <code>reg2</code></td>
+<td><code>reg0</code>, <code>reg1</code>, <code>reg2</code></td>
+</tr>
+<tr>
+<td>MULI</td>
+<td>Multiplies <code>reg0</code> and <code>imm</code> and stores the value at <code>reg1</code></td>
+<td><code>reg0</code>, <code>imm</code>, <code>reg1</code></td>
+</tr>
+<tr>
+<td>DIV</td>
+<td>Divides <code>reg0</code> by <code>reg1</code> and stores the value at <code>reg2</code></td>
+<td><code>reg0</code>, <code>reg1</code>, <code>reg2</code></td>
+</tr>
+<tr>
+<td>DIVI</td>
+<td>Divides <code>reg0</code> by <code>imm</code> and stores the value at <code>reg1</code></td>
+<td><code>reg0</code>, <code>imm</code>, <code>reg1</code></td>
+</tr>
+<tr>
+<td>CGR</td>
+<td>Checks if <code>reg0</code> &gt; <code>reg1</code> and stores the result at <code>CND</code></td>
+<td><code>reg0</code>, <code>reg1</code></td>
+</tr>
+<tr>
+<td>CLO</td>
+<td>Checks if <code>reg0</code> &lt; <code>reg1</code> and stores the result at <code>CND</code></td>
+<td><code>reg0</code>, <code>reg1</code></td>
+</tr>
+<tr>
+<td>CEQ</td>
+<td>Checks if <code>reg0</code> == <code>reg1</code> and stores the result at <code>CND</code></td>
+<td><code>reg0</code>, <code>reg1</code></td>
+</tr>
+<tr>
+<td>JMP</td>
+<td>Jumps to <code>jpt</code></td>
+<td><code>jpt</code></td>
+</tr>
+<tr>
+<td>JT</td>
+<td>Jumps to <code>jpt</code> <strong>IF</strong> <code>CND</code> is true</td>
+<td><code>jpt</code></td>
+</tr>
+<tr>
+<td>JF</td>
+<td>Jumps to <code>jpt</code> <strong>IF</strong> <code>CND</code> is false</td>
+<td><code>jpt</code></td>
+</tr>
+<tr>
+<td>JZ</td>
+<td>Jumps to <code>jpt</code> <strong>IF</strong> <code>FLAG</code> is <code>Z</code> (Zero)</td>
+<td><code>jpt</code></td>
+</tr>
+<tr>
+<td>JNZ</td>
+<td>Jumps to <code>jpt</code> <strong>IF</strong> <code>FLAG</code> is <strong>NOT</strong> <code>Z</code> (Zero)</td>
+<td><code>jpt</code></td>
+</tr>
+<tr>
+<td>JN</td>
+<td>Jumps to <code>jpt</code> <strong>IF</strong> <code>FLAG</code> is <code>N</code> (Negative)</td>
+<td><code>jpt</code></td>
+</tr>
+<tr>
+<td>JNN</td>
+<td>Jumps to <code>jpt</code> <strong>IF</strong> <code>FLAG</code> is <strong>NOT</strong> <code>N</code> (Negative)</td>
+<td><code>jpt</code></td>
+</tr>
+<tr>
+<td>PUTN</td>
+<td>Output number at <code>reg</code></td>
+<td><code>reg</code></td>
+</tr>
+<tr>
+<td>PUTS</td>
+<td>Output string of len <code>strlen</code>. Will read <code>strlen</code> characters in code.</td>
+<td><code>strlen</code>, <code>...</code></td>
+</tr>
+<tr>
+<td>JPT</td>
+<td>Define a new jump point</td>
+<td><em>None</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="links" tabindex="-1"><a class="header-anchor" href="#links">Links</a></h2>
+<ul>
+<li><a href="https://github.com/Nykenik24/MVM">GitHub repository</a>.</li>
+<li><a href="https://github.com/Nykenik24/MVM/tree/main/spec">Specification</a>.</li>
+</ul>
+
+
+    <footer>
+      <div class="social"><a href="https://codeberg.org/nykenik24" target="_blank">Codeberg</a><a href="https://github.com/nykenik24" target="_blank">GitHub</a><a href="/page-info" target="_blank">Page info.</a></div>
+    </footer>
+	</main>
+</body>
+
+</html>
