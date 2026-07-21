@@ -426,7 +426,41 @@ main .project-card p {
   opacity: .8;
 }
 
-@media (max-width: 40rem) {
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+header button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 2rem;
+  height: 2rem;
+
+  background: none;
+  border: none;
+  color: var(--text);
+
+  font: inherit;
+  font-size: 1.2rem;
+
+  cursor: pointer;
+}
+
+header button:hover,
+header button:focus-visible {
+  background: var(--accent);
+  color: var(--base);
+}
+
+#theme-toggle img {
+  filter: var(--theme-icon-filter);
+}
+
+@media (max-width: 1000px) {
   main {
     max-width: none;
     width: 100%;
@@ -464,5 +498,9 @@ main .project-card p {
   main ul,
   main ol {
     padding-left: 1.2rem;
+  }
+
+  html {
+    font-size: 18px;
   }
 }
