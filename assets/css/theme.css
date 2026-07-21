@@ -31,3 +31,9 @@ body {
   font-weight: 700;
   font-style: normal;
 }
+
+@media (max-width: 40rem) {
+  body {
+    font-size: 20px;
+  }
+}
