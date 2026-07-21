@@ -30,6 +30,11 @@
       id: "solarized",
       icon: "/assets/svg/solarized.svg",
       colorScheme: "solarized"
+    },
+    {
+      id: "github-dark",
+      icon: "/assets/svg/github.svg",
+      colorScheme: "github-dark"
     }
   ];
 

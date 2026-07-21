@@ -2,5 +2,43 @@
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: var(--base-3);
+  color: var(--code-text);
+  background: var(--code);
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: var(--base-4);
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-built_in {
+  color: var(--accent);
+}
+
+.hljs-string,
+.hljs-attr {
+  color: var(--green);
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-type {
+  color: var(--accent-complementary);
+}
+
+.hljs-title,
+.hljs-section {
+  color: var(--code-text);
+}
+
+.hljs-variable,
+.hljs-template-variable {
+  color: var(--red);
+}
+
+.hljs-meta {
+  color: var(--accent-complementary);
 }
