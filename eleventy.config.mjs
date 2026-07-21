@@ -2,6 +2,8 @@ import { config as siteConfig } from "./siteconfig.mjs"
 import { DateTime } from "luxon";
 import markdownIt from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
+import fs from "node:fs";
+import path from "node:path";
 
 export default function(conf) {
   const md = markdownIt({
@@ -16,6 +18,19 @@ export default function(conf) {
 
   conf.addNunjucksFilter("date", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString();
+  });
+
+  conf.addWatchTarget("../assets/themes/");
+
+  conf.addNunjucksGlobal("themeStylesheets", () => {
+    const themesDir = path.join(
+      conf.dir.input,
+      "../assets/themes"
+    );
+
+    return fs.readdirSync(themesDir)
+      .filter(file => file.endsWith(".css"))
+      .map(file => `/assets/themes/${file}`);
   });
 
   conf.addGlobalData("layout", "page");

@@ -1,0 +1,21 @@
+:root[data-theme="nord"] {
+  --base: #2e3440;
+  --base-2: #3b4252;
+  --base-3: #434c5e;
+  --base-4: #4c566a;
+
+  --text: #eceff4;
+
+  --code: #3b4252;
+  --code-text: #88c0d0;
+
+  --red: #bf616a;
+  --accent: #88c0d0;
+  --green: #a3be8c;
+
+  --accent-complementary: #ebcb8b;
+
+  --theme-icon-filter: invert(1);
+
+  color-scheme: dark;
+}

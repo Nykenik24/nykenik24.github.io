@@ -161,7 +161,8 @@ main a {
 }
 
 main p a,
-main ul a {
+main ul a,
+main ol a {
   color: var(--accent);
   opacity: 0.8;
 }

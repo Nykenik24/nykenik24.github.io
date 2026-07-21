@@ -9,7 +9,12 @@
 	<title>{{ site.title | safe }}</title>
 	{% endif %}
 
-	<link rel="stylesheet" href="{{ "/assets/css/main.css" | url}}">
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | url }}">
+
+  {% for theme in themeStylesheets() %}
+  <link rel="stylesheet" href="{{ theme | url }}">
+  {% endfor %}
+
   <script src="/assets/js/main.js" defer></script>
   <script src="/assets/js/theme_switch.js" defer></script>
   <script src="/assets/js/dyslexic.js" defer></script>

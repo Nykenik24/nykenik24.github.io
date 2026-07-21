@@ -1,0 +1,21 @@
+:root[data-theme="dark"] {
+  --base: #0a0a0a;
+  --base-2: #0f0f0f;
+  --base-3: #1c1c1c;
+  --base-4: #2c2c2c;
+
+  --text: #fffeef;
+
+  --code: #2c2c3c;
+  --code-text: #abd1de;
+
+  --red: #e84855;
+  --accent: #00bbee;
+  --green: #a2ad59;
+
+  --accent-complementary: #feba4f;
+
+  --theme-icon-filter: invert(1);
+
+  color-scheme: dark;
+}
