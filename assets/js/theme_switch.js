@@ -1,42 +1,18 @@
-(() => {
+(async () => {
   console.log("theme_switch.js loaded")
 
-  const button = document.getElementById("theme-toggle");
+  const nextButton = document.getElementById("theme-next");
+  const previousButton = document.getElementById("theme-prev");
   const icon = document.getElementById("theme-icon");
-  const root = document.documentElement;
+  const name = document.getElementById("theme-name");
 
-  const themes = [
-    {
-      id: "dark",
-      icon: "/assets/svg/moon.svg",
-      colorScheme: "dark",
-    },
-    {
-      id: "light",
-      icon: "/assets/svg/sun.svg",
-      colorScheme: "light",
-    },
-    {
-      id: "nord",
-      icon: "/assets/svg/snowflake.svg",
-      colorScheme: "nord"
-    },
-    {
-      id: "gruvbox",
-      icon: "/assets/svg/box.svg",
-      colorScheme: "gruvbox"
-    },
-    {
-      id: "solarized",
-      icon: "/assets/svg/solarized.svg",
-      colorScheme: "solarized"
-    },
-    {
-      id: "github-dark",
-      icon: "/assets/svg/github.svg",
-      colorScheme: "github-dark"
-    }
-  ];
+  const maxNameLength = Math.max(
+    ...themes.map(theme => theme.name.length)
+  );
+
+  name.style.width = `${maxNameLength}ch`;
+
+  const root = document.documentElement;
 
   const defaultTheme = "dark";
 
@@ -52,7 +28,11 @@
       icon.src = theme.icon;
     }
 
-    button.title = String(theme.id).charAt(0).toUpperCase() + String(theme.id).slice(1);
+    if (name) {
+      name.textContent = theme.name;
+    }
+
+    button.title = theme.name;
     localStorage.setItem("theme", theme.id);
   }
 
@@ -85,12 +65,9 @@
     setTheme(previous);
   }
 
-  button.addEventListener("click", nextTheme);
 
-  button.addEventListener("contextmenu", event => {
-    event.preventDefault();
-    previousTheme();
-  });
+  nextButton.addEventListener("click", nextTheme);
+  previousButton.addEventListener("click", previousTheme);
 
   loadTheme();
 })();

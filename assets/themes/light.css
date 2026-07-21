@@ -1,3 +1,12 @@
+/* 
+---
+id: light
+name: Light
+icon: /assets/svg/sun.svg
+colorScheme: light
+---
+*/
+
 :root[data-theme="light"] {
   --base: #fafafa;
   --base-2: #ffffff;

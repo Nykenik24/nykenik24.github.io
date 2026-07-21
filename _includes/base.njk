@@ -11,20 +11,15 @@
 
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | url }}">
 
-  {% for theme in themeStylesheets() %}
-  <link rel="stylesheet" href="{{ theme | url }}">
+  {% for theme in collections.themes %}
+  <link rel="stylesheet" href="/assets/themes/{{ theme.file }}">
   {% endfor %}
 
   <script src="/assets/js/main.js" defer></script>
   <script src="/assets/js/theme_switch.js" defer></script>
   <script src="/assets/js/dyslexic.js" defer></script>
   <script>
-  (() => {
-    const theme = localStorage.getItem("theme");
-    if (theme) {
-      document.documentElement.dataset.theme = theme;
-    }
-  })();
+    const themes = {{ collections.themes | dump | safe }};
   </script>
 
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/mocha.min.css"> -->
@@ -41,9 +36,18 @@
       </a>
 
       <div class="header-right">
-      <button id="theme-toggle" aria-label="Toggle theme">
+      <div class="theme-switcher">
+        <button id="theme-prev" aria-label="Previous theme">
+          <span>◀</span>
+        </button>
+
         <img id="theme-icon" alt="" width="20" height="20">
-      </button>
+        <span id="theme-name"></span>
+
+        <button id="theme-next" aria-label="Next theme">
+          <span>▶</span>
+        </button>
+      </div>
       <button
         id="font-toggle"
         aria-label="Toggle OpenDyslexic"

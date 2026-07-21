@@ -1,0 +1,30 @@
+/*
+---
+id: rose-pine-moon
+name: Rose Piné Moon
+icon: /assets/svg/rose.svg
+colorScheme: dark
+---
+*/
+
+:root[data-theme="rose-pine-moon"] {
+  --base: #232136;
+  --base-2: #2a273f;
+  --base-3: #393552;
+  --base-4: #44415a;
+
+  --text: #e0def4;
+
+  --code: #191724;
+  --code-text: #c4a7e7;
+
+  --red: #eb6f92;
+  --accent: #9ccfd8;
+  --green: #9ccfd8;
+
+  --accent-complementary: #f6c177;
+
+  --theme-icon-filter: invert(1);
+
+  color-scheme: dark;
+}

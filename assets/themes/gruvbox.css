@@ -1,3 +1,12 @@
+/*
+---
+id: gruvbox
+name: Gruvbox
+icon: /assets/svg/box.svg
+colorScheme: dark
+---
+*/
+
 :root[data-theme="gruvbox"] {
   --base: #282828;
   --base-2: #32302f;

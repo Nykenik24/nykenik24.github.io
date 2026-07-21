@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@11ty/eleventy": "github:11ty/eleventy",
+    "gray-matter": "^4.0.3",
     "luxon": "^3.7.2",
     "markdown-it": "^14.3.0",
     "markdown-it-anchor": "^9.2.1"

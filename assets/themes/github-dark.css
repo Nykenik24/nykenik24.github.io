@@ -1,3 +1,12 @@
+/* 
+---
+id: github-dark
+name: GitHub Dark
+icon: /assets/svg/github.svg
+colorScheme: dark
+---
+*/
+
 :root[data-theme="github-dark"] {
   --base: #0d1117;
   --base-2: #161b22;

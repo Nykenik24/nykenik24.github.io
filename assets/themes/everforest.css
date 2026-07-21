@@ -1,0 +1,30 @@
+/*
+---
+id: everforest
+name: Everforest
+icon: /assets/svg/forest.svg
+colorScheme: dark
+---
+*/
+
+:root[data-theme="everforest"] {
+  --base: #2d353b;
+  --base-2: #272e33;
+  --base-3: #343f44;
+  --base-4: #475258;
+
+  --text: #d3c6aa;
+
+  --code: #272e33;
+  --code-text: #7fbbb3;
+
+  --red: #e67e80;
+  --accent: #7fbbb3;
+  --green: #a7c080;
+
+  --accent-complementary: #dbbc7f;
+
+  --theme-icon-filter: invert(1);
+
+  color-scheme: dark;
+}

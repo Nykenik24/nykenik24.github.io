@@ -4,6 +4,7 @@ import markdownIt from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
 import fs from "node:fs";
 import path from "node:path";
+import matter from "gray-matter";
 
 export default function(conf) {
   const md = markdownIt({
@@ -22,15 +23,47 @@ export default function(conf) {
 
   conf.addWatchTarget("../assets/themes/");
 
-  conf.addNunjucksGlobal("themeStylesheets", () => {
-    const themesDir = path.join(
+  conf.addCollection("themes", () => {
+    const themesDir = path.resolve(
       conf.dir.input,
       "../assets/themes"
     );
 
     return fs.readdirSync(themesDir)
       .filter(file => file.endsWith(".css"))
-      .map(file => `/assets/themes/${file}`);
+      .map(file => {
+        const content = fs.readFileSync(
+          path.join(themesDir, file),
+          "utf8"
+        );
+
+        const match = content.match(
+          /\/\*\s*---([\s\S]*?)---\s*\*\//
+        );
+
+        if (!match) {
+          return null;
+        }
+
+        const metadata = Object.fromEntries(
+          match[1]
+            .trim()
+            .split("\n")
+            .map(line => {
+              const [key, ...value] = line.split(":");
+              return [
+                key.trim(),
+                value.join(":").trim()
+              ];
+            })
+        );
+
+        return {
+          ...metadata,
+          file,
+        };
+      })
+      .filter(Boolean);
   });
 
   conf.addGlobalData("layout", "page");

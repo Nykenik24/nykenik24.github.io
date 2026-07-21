@@ -1,0 +1,30 @@
+/*
+---
+id: sweet
+name: Sweet
+icon: /assets/svg/cake.svg
+colorScheme: dark
+---
+*/
+
+:root[data-theme="sweet"] {
+  --base: #120018;
+  --base-2: #21002f;
+  --base-3: #3b0054;
+  --base-4: #ff4fd8;
+
+  --text: #ffffff;
+
+  --code: #1b0026;
+  --code-text: #ff9de2;
+
+  --red: #ff3864;
+  --accent: #ff4fd8;
+  --green: #7dff72;
+
+  --accent-complementary: #ffe600;
+
+  --theme-icon-filter: invert(1);
+
+  color-scheme: dark;
+}

@@ -1,0 +1,30 @@
+/*
+---
+id: high-contrast
+name: High Contrast
+icon: /assets/svg/contrast.svg
+colorScheme: dark
+---
+*/
+
+:root[data-theme="high-contrast"] {
+  --base: #000000;
+  --base-2: #000000;
+  --base-3: #1a1a1a;
+  --base-4: #ffffff;
+
+  --text: #ffffff;
+
+  --code: #000000;
+  --code-text: #ffffff;
+
+  --red: #ff5555;
+  --accent: #00aaff;
+  --green: #00ff00;
+
+  --accent-complementary: #ffff00;
+
+  --theme-icon-filter: invert(1);
+
+  color-scheme: dark;
+}
