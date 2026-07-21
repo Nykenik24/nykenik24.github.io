@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <head>
 	
@@ -8,6 +9,16 @@
 
 	<link rel="stylesheet" href="/assets/css/main.css">
   <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/theme_switch.js" defer></script>
+  <script src="/assets/js/dyslexic.js" defer></script>
+  <script>
+  (() => {
+    const theme = localStorage.getItem("theme");
+    if (theme) {
+      document.documentElement.dataset.theme = theme;
+    }
+  })();
+  </script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/mocha.min.css">
 	<link rel="stylesheet" href="/assets/css/hjs.css">
@@ -21,7 +32,16 @@
       <a href="/">
         <h1>Andrei&#39;s corner</h1>
       </a>
-      <nav id="menu">
+
+      <div class="header-right">
+      <button id="theme-toggle" aria-label="Toggle theme">
+        <img id="theme-icon" alt="" width="20" height="20">
+      </button>
+      <button id="font-toggle" aria-label="Toggle OpenDyslexic" title="Toggle OpenDyslexic">
+        Aa
+      </button>
+
+        <nav id="menu">
     <ul><li>
                 <a no-transition href="/about/">about</a>
             </li><li>
@@ -31,6 +51,7 @@
             </li></ul>
 </nav>
 
+      </div>
     </header>
 		
 	<h1 class="post-title">First version of the portfolio</h1>

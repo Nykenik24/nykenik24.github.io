@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <head>
 	
@@ -8,6 +9,16 @@
 
 	<link rel="stylesheet" href="/assets/css/main.css">
   <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/theme_switch.js" defer></script>
+  <script src="/assets/js/dyslexic.js" defer></script>
+  <script>
+  (() => {
+    const theme = localStorage.getItem("theme");
+    if (theme) {
+      document.documentElement.dataset.theme = theme;
+    }
+  })();
+  </script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/mocha.min.css">
 	<link rel="stylesheet" href="/assets/css/hjs.css">
@@ -21,7 +32,16 @@
       <a href="/">
         <h1>Andrei&#39;s corner</h1>
       </a>
-      <nav id="menu">
+
+      <div class="header-right">
+      <button id="theme-toggle" aria-label="Toggle theme">
+        <img id="theme-icon" alt="" width="20" height="20">
+      </button>
+      <button id="font-toggle" aria-label="Toggle OpenDyslexic" title="Toggle OpenDyslexic">
+        Aa
+      </button>
+
+        <nav id="menu">
     <ul><li>
                 <a no-transition href="/about/">about</a>
             </li><li>
@@ -31,10 +51,11 @@
             </li></ul>
 </nav>
 
+      </div>
     </header>
 		
 	<h1 id="salutations%2C-stranger." tabindex="-1"><a class="header-anchor" href="#salutations%2C-stranger.">Salutations, stranger.</a></h1>
-<p>I am <strong>Luca Andrei</strong> (a.k.a <em>Nykenik24</em>), a <span class="my-age">14.247630920914037</span> hobby programmer.</p>
+<p>I am <strong>Luca Andrei</strong> (a.k.a <em>Nykenik24</em>), a <span class="my-age">14.247723698980815</span> hobby programmer.</p>
 <p>I love to build open-source software to the degree you could say I crave for it. I think some of the best applications are completely community-driven FOSS. That’s why most of the projects I make, if not all, are completely Free and Open-Source usually uploaded to <a href="https://github.com/Nykenik24">GitHub</a> or, more recently, <a href="https://codeberg.org/nykenik24">Codeberg</a>.</p>
 <p>Everyday I try to become just a tad better at coding, fact supported by my ability to quickly learn most things.</p>
 <p>If you see any errors in information, spelling/grammar errors, bugs or basically any issue in the website please <a href="#contact-me">contact me!</a>.</p>
