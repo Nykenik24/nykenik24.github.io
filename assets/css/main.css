@@ -465,4 +465,8 @@ main .project-card p {
   main ol {
     padding-left: 1.2rem;
   }
+
+  :root {
+    font-size: 22px;
+  }
 }
