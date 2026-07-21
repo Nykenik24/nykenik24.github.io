@@ -1,0 +1,30 @@
+/*
+---
+id: tokyo-night
+name: Tokyo Night
+icon: /assets/svg/japanese.svg
+colorScheme: dark
+---
+*/
+
+:root[data-theme="tokyo-night"] {
+  --base: #1a1b26;
+  --base-2: #16161e;
+  --base-3: #24283b;
+  --base-4: #414868;
+
+  --text: #c0caf5;
+
+  --code: #16161e;
+  --code-text: #7dcfff;
+
+  --red: #f7768e;
+  --accent: #7aa2f7;
+  --green: #9ece6a;
+
+  --accent-complementary: #e0af68;
+
+  --theme-icon-filter: invert(1);
+
+  color-scheme: dark;
+}

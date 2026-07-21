@@ -1,0 +1,30 @@
+/*
+---
+id: catppuccin
+name: Catppucin Moccha
+icon: /assets/svg/cat.svg
+colorScheme: dark
+---
+*/
+
+:root[data-theme="catppuccin"] {
+  --base: #1e1e2e;
+  --base-2: #181825;
+  --base-3: #313244;
+  --base-4: #45475a;
+
+  --text: #cdd6f4;
+
+  --code: #181825;
+  --code-text: #89b4fa;
+
+  --red: #f38ba8;
+  --accent: #89b4fa;
+  --green: #a6e3a1;
+
+  --accent-complementary: #f9e2af;
+
+  --theme-icon-filter: invert(1);
+
+  color-scheme: dark;
+}

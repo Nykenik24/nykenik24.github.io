@@ -1,0 +1,30 @@
+/*
+---
+id: amoled
+name: Amoled
+icon: /assets/svg/circle.svg
+colorScheme: dark
+---
+*/
+
+:root[data-theme="amoled"] {
+  --base: #000000;
+  --base-2: #121212;
+  --base-3: #2a2a2a;
+  --base-4: #3a3a3a;
+
+  --text: #a0a0a0;
+
+  --code: #121212;
+  --code-text: #d0d0d0;
+
+  --red: #d06060;
+  --accent: #b0b0b0;
+  --green: #80b080;
+
+  --accent-complementary: #c0c080;
+
+  --theme-icon-filter: invert(1);
+
+  color-scheme: dark;
+}

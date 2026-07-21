@@ -1,3 +1,12 @@
+/*
+---
+id: nord
+name: Nord
+icon: /assets/svg/snowflake.svg
+colorScheme: dark
+---
+*/
+
 :root[data-theme="nord"] {
   --base: #2e3440;
   --base-2: #3b4252;

@@ -1,3 +1,12 @@
+/*
+---
+id: solarized
+name: Solarized
+icon: /assets/svg/solarized.svg
+colorScheme: dark
+---
+*/
+
 :root[data-theme="solarized"] {
   --base: #002b36;
   --base-2: #073642;
