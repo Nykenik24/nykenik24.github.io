@@ -1,0 +1,21 @@
+:root[data-theme="solarized"] {
+  --base: #002b36;
+  --base-2: #073642;
+  --base-3: #09404b;
+  --base-4: #586e75;
+
+  --text: #eee8d5;
+
+  --code: #073642;
+  --code-text: #2aa198;
+
+  --red: #dc322f;
+  --accent: #268bd2;
+  --green: #859900;
+
+  --accent-complementary: #cb4b16;
+
+  --theme-icon-filter: invert(1);
+
+  color-scheme: dark;
+}

@@ -1,31 +1,92 @@
 (() => {
   console.log("theme_switch.js loaded")
 
-  const themeButton = document.getElementById("theme-toggle");
+  const button = document.getElementById("theme-toggle");
   const icon = document.getElementById("theme-icon");
   const root = document.documentElement;
 
-  const saved =
-    localStorage.getItem("theme") ??
-    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  const themes = [
+    {
+      id: "dark",
+      icon: "/assets/svg/moon.svg",
+      colorScheme: "dark",
+    },
+    {
+      id: "light",
+      icon: "/assets/svg/sun.svg",
+      colorScheme: "light",
+    },
+    {
+      id: "nord",
+      icon: "/assets/svg/snowflake.svg",
+      colorScheme: "nord"
+    },
+    {
+      id: "gruvbox",
+      icon: "/assets/svg/box.svg",
+      colorScheme: "gruvbox"
+    },
+    {
+      id: "solarized",
+      icon: "/assets/svg/solarized.svg",
+      colorScheme: "solarized"
+    }
+  ];
 
-  function setTheme(theme) {
-    root.dataset.theme = theme;
-    localStorage.setItem("theme", theme);
+  const defaultTheme = "dark";
 
-    icon.src = theme === "dark"
-      ? "/assets/svg/moon.svg"
-      : "/assets/svg/sun.svg";
+  function getThemeIndex(id) {
+    return themes.findIndex(theme => theme.id === id);
   }
 
-  setTheme(saved);
+  function setTheme(theme) {
+    root.dataset.theme = theme.id;
+    root.style.colorScheme = theme.colorScheme;
 
-  themeButton.addEventListener("click", () => {
-    const next = root.dataset.theme === "dark"
-      ? "light"
-      : "dark";
+    if (icon) {
+      icon.src = theme.icon;
+    }
+
+    button.title = String(theme.id).charAt(0).toUpperCase() + String(theme.id).slice(1);
+    localStorage.setItem("theme", theme.id);
+  }
+
+  function loadTheme() {
+    const saved = localStorage.getItem("theme");
+    const theme = themes.find(theme => theme.id === saved)
+      ?? themes.find(theme => theme.id === defaultTheme)
+      ?? themes[0];
+
+    setTheme(theme);
+  }
+
+  function nextTheme() {
+    const current = getThemeIndex(root.dataset.theme);
+
+    const next = themes[
+      (current + 1) % themes.length
+    ];
 
     setTheme(next);
+  }
+
+  function previousTheme() {
+    const current = getThemeIndex(root.dataset.theme);
+
+    const previous = themes[
+      (current - 1 + themes.length) % themes.length
+    ];
+
+    setTheme(previous);
+  }
+
+  button.addEventListener("click", nextTheme);
+
+  button.addEventListener("contextmenu", event => {
+    event.preventDefault();
+    previousTheme();
   });
+
+  loadTheme();
 })();
 

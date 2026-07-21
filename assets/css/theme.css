@@ -1,38 +1,4 @@
 :root {
-  --base: #0a0a0a;
-  --base-2: #0f0f0f;
-  --base-3: #1c1c1c;
-  --base-4: #2c2c2c;
-  --text: #fffeef;
-  --code: #2c2c3c;
-  --code-text: #abd1de;
-  --red: #e84855;
-  --accent: #00bbee;
-  --green: #a2ad59;
-  --accent-complementary: #feba4f;
-  --theme-icon-filter: invert(1);
-
-  color-scheme: dark;
-}
-
-:root[data-theme="light"] {
-  --base: #fafafa;
-  --base-2: #ffffff;
-  --base-3: #ececec;
-  --base-4: #d8d8d8;
-  --text: #222;
-  --code: #f4f4f4;
-  --code-text: #004b66;
-  --red: #c92c2c;
-  --accent: #0077cc;
-  --green: #4f7f3a;
-  --accent-complementary: #b56b00;
-  --theme-icon-filter: invert(0);
-
-  color-scheme: light;
-}
-
-:root {
   --font-body: "Monaspace Krypton", monospace;
   --font-size: 16px;
 }
@@ -44,6 +10,7 @@
 
 body {
   font-family: var(--font-body);
+  font-size: var(--font-size);
 }
 
 @font-face {
