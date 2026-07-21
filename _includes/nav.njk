@@ -1,0 +1,9 @@
+<nav id="menu">
+    <ul>
+        {%- for s in site.headerLinks -%}
+            <li>
+                <a no-transition href="{{ s.href }}">{{ s.name }}</a>
+            </li>
+        {%- endfor -%}
+    </ul>
+</nav>

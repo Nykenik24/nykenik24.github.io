@@ -1,21 +1,27 @@
 ---
-title: "About me"
-description: "Me. What did you expect 'About me' to be?"
-hideBackToTop: true
-hidePagination: true
+layout: page.njk
+permalink: "/about/index.html"
 ---
 
-Welcome! I am Nykenik24 or just Nykenik, a hobby programmer located in _Alguna parte_, Spain.
+# Salutations, stranger.
 
-### What I do
-I normally develop little utilities, little games, well little anything I want >;D. My favorite languages are probably Go, C and Lua.
+I am __Luca Andrei__ (a.k.a _Nykenik24_), a <span class="my-age">{{ age }}</span> hobby programmer.
 
-You can find all my projects (or at least the ones that I wanted to share in the blog) [right here](/projects).
+I love to build open-source software to the degree you could say I crave for it. I think some of the best applications are completely community-driven FOSS. That's why most of the projects I make, if not all, are completely Free and Open-Source usually uploaded to [GitHub](https://github.com/Nykenik24) or, more recently, [Codeberg](https://codeberg.org/nykenik24).
 
-### Where to find me
-You can:
-- Contact me [by email](mailto:Nykenik24@proton.me).
-- Go to [my GitHub](https://github.com/Nykenik24).
+Everyday I try to become just a tad better at coding, fact supported by my ability to quickly learn most things.
 
-### Where to go now
-I recommend you read [my first post](/posts/i_might_actually_post/), or see [all my posts](/posts).
+If you see any errors in information, spelling/grammar errors, bugs or basically any issue in the website please [contact me!](#contact-me).
+
+Stuff I usually make:
+- Low-level projects in C.
+- Backends in [Go](https://go.dev).
+
+Software I use daily:
+- NeoVim.
+- Firefox (considering changing to LibreWolf or Zen).
+- GhosTTY.
+- Git.
+
+## Contact me
+- Personal mail [nykenik24@proton.me](mailto:nykenik24@proton.me).

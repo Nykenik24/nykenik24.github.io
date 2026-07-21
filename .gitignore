@@ -1,4 +1,5 @@
-_site
-.oldhugo
-public
-post_archive
+_dist/
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+.cache/

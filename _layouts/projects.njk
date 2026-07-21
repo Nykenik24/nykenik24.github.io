@@ -1,0 +1,26 @@
+{% extends "base.njk" %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+{{ content | safe }}
+<hr>
+<div class="project-grid">
+  {% if collections.projects.length > 0 %}
+    {% for project in collections.projects %}
+      {% if project.data.show %}
+        <a class="project-card" href="{{ project.url }}">
+          <img
+            src="{{ project.data.image | url }}"
+            alt="{{ project.data.title }}">
+
+          <h2>{{ project.data.title }}</h2>
+
+          <p>{{ project.data.description }}</p>
+        </a>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <p><strong>Oops! No projects for now.</strong></p>
+  {% endif %}
+</div>
+{% endblock %}

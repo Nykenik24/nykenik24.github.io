@@ -1,0 +1,11 @@
+{% extends "base.njk" %}
+
+{% block header %}
+<h1>{{ title | safe }}</h1>
+{% endblock %}
+{% block content %}
+	<h1 class="post-title">{{ title | safe }}</h1>
+	<p><small class="date"><em>{{ page.date | date }}</em> <strong>{{ author | safe }}</strong></small></p>
+	<hr>
+	<div class="post-content">{{ content | safe }}</div>
+{% endblock %}
