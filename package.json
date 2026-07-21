@@ -1,20 +1,20 @@
 {
-	"name": "11tytest",
-	"version": "1.0.0",
-	"description": "Test portfolio",
-	"license": "ISC",
-	"author": "Spelis",
-	"type": "commonjs",
-	"main": "index.js",
-	"scripts": {
-		"build": "eleventy",
-		"dev": "eleventy --serve --incremental",
-		"autobuild": "eleventy --watch"
-	},
-	"dependencies": {
-		"@11ty/eleventy": "github:11ty/eleventy",
-		"luxon": "^3.7.2",
-		"markdown-it": "^14.3.0",
-		"markdown-it-anchor": "^9.2.1"
-	}
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "My portfolio",
+  "license": "ISC",
+  "author": "Nykenik24",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve --incremental",
+    "autobuild": "eleventy --watch"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "github:11ty/eleventy",
+    "luxon": "^3.7.2",
+    "markdown-it": "^14.3.0",
+    "markdown-it-anchor": "^9.2.1"
+  }
 }
