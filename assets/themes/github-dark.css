@@ -1,0 +1,21 @@
+:root[data-theme="github-dark"] {
+  --base: #0d1117;
+  --base-2: #161b22;
+  --base-3: #21262d;
+  --base-4: #30363d;
+
+  --text: #c9d1d9;
+
+  --code: #21262d;
+  --code-text: #79c0ff;
+
+  --red: #ff7b72;
+  --accent: #58a6ff;
+  --green: #3fb950;
+
+  --accent-complementary: #d29922;
+
+  --theme-icon-filter: invert(1);
+
+  color-scheme: dark;
+}
