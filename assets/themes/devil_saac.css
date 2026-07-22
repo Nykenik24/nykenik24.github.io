@@ -1,0 +1,30 @@
+/*
+---
+id: tboi-devil
+name: Isaac Devil Room
+icon: /assets/images/tboi_black_heart.webp
+colorScheme: dark
+---
+*/
+
+:root[data-theme="tboi-devil"] {
+  --base: #080809;
+  --base-2: #151012;
+  --base-3: #25171a;
+  --base-4: #4a252b;
+
+  --text: #ded6d4;
+
+  --code: #6b3038;
+  --code-text: #ffe1e1;
+
+  --red: #c62828;
+  --accent: #b21f2d;
+  --green: #586b4a;
+
+  --accent-complementary: #5b397d;
+
+  --theme-icon-filter: none;
+
+  color-scheme: dark;
+}
