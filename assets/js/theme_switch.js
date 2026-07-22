@@ -32,7 +32,6 @@
       name.textContent = theme.name;
     }
 
-    button.title = theme.name;
     localStorage.setItem("theme", theme.id);
   }
 
