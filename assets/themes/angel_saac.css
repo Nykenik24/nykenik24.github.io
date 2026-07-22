@@ -1,0 +1,30 @@
+/*
+---
+id: tboi-angel
+name: Isaac Angel Room
+icon: /assets/images/tboi_angel.webp
+colorScheme: dark
+---
+*/
+
+:root[data-theme="tboi-angel"] {
+  --base: #21262b;
+  --base-2: #293741;
+  --base-3: #354a55;
+  --base-4: #6c8691;
+
+  --text: #e8f0f2;
+
+  --code: #5b7580;
+  --code-text: #fff6d8;
+
+  --red: #b84a4a;
+  --accent: #d9c77a;
+  --green: #79a88a;
+
+  --accent-complementary: #8b78c7;
+
+  --theme-icon-filter: none;
+
+  color-scheme: dark;
+}
