@@ -1,0 +1,30 @@
+/*
+---
+id: guacamoled
+name: Guacamoled
+icon: /assets/svg/circle.svg
+colorScheme: dark
+---
+*/
+
+:root[data-theme="guacamoled"] {
+  --base: #000000;
+  --base-2: #0d120d;
+  --base-3: #1b2419;
+  --base-4: #2d3a2b;
+
+  --text: #b6c5b1;
+
+  --code: #10150f;
+  --code-text: #d7e2d1;
+
+  --red: #c96d63;
+  --accent: #b8d98c;
+  --green: #74b36d;
+
+  --accent-complementary: #d4c27d;
+
+  --theme-icon-filter: invert(1);
+
+  color-scheme: dark;
+}
