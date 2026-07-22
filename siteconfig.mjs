@@ -1,9 +1,9 @@
 export const config = {
   siteTitle: "Andrei's corner",
   headerLinks: [
-    { name: "about", href: "/about/" },
-    { name: "blog", href: "/blog/" },
-    { name: "projects", href: "/projects/" },
+    { name: "/about", href: "/about/" },
+    { name: "/blog", href: "/blog/" },
+    { name: "/projects", href: "/projects/" },
   ],
   footerLinks: [
     {

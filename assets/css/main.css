@@ -14,6 +14,10 @@
 body {
   color: var(--text);
   background-color: var(--base);
+
+  transition:
+    color var(--fg-transition-duration),
+    background var(--bg-transition-duration);
 }
 
 body::before {
@@ -396,7 +400,7 @@ main .project-card {
   flex-direction: column;
 
   background: var(--base-3);
-  border-radius: 6px;
+  border-radius: 2px;
   overflow: hidden;
 
   text-decoration: none;
@@ -407,8 +411,8 @@ main .project-card {
 
   transition:
     transform .15s ease,
-    background .5s ease,
-    color .5s ease;
+    background var(--bg-transition-duration),
+    color var(--fg-transition-duration);
 }
 
 main .project-card:hover {

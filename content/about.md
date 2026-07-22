@@ -5,7 +5,9 @@ permalink: "/about/index.html"
 
 # Salutations, stranger.
 
-I am __Luca Andrei__ (a.k.a _Nykenik24_), a <span class="my-age">{{ age }}</span> hobby programmer.
+I am __Luca Andrei__ (a.k.a _Nykenik24_), a hobby programmer mostly working with C.
+* Age: <a class="my-age">{{ age }}</a>.
+* Location: somewhere in Spain.
 
 I love to build open-source software to the degree you could say I crave for it. I think some of the best applications are completely community-driven FOSS. That's why most of the projects I make, if not all, are completely Free and Open-Source usually uploaded to [GitHub](https://github.com/Nykenik24) or, more recently, [Codeberg](https://codeberg.org/nykenik24).
 

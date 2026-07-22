@@ -46,12 +46,14 @@ const updateAge = () => {
   days %= 7;
 
   const singOrPlural = (n, base) => {
-    return n > 1 ? `${base}s` : base
+    return n != 1 ? `${base}s` : base
   }
 
+  const decades = Math.floor(years / 10);
+
   elements.forEach((e) => {
-    e.textContent = `${years} years, ${months} ${singOrPlural(months, "month")}, ${weeks} ${singOrPlural(weeks, "week")} and ${days} ${singOrPlural(days, "day")} old`;
-    e.title = `${daysLeft} days left`;
+    e.textContent = `${decades} ${singOrPlural(decades, "decade")}, ${years - (decades * 10)} years, ${months} ${singOrPlural(months, "month")}, ${weeks} ${singOrPlural(weeks, "week")} and ${days} ${singOrPlural(days, "day")}`;
+    e.title = `${daysLeft} ${singOrPlural(daysLeft, "day")} until next birthday`;
   });
 
   requestAnimationFrame(updateAge);
