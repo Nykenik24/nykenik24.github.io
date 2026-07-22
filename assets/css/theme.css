@@ -1,6 +1,9 @@
 :root {
   --font-body: "Monaspace Krypton", monospace;
   --font-size: 16px;
+
+  --bg-transition-duration: 0.25s;
+  --fg-transition-duration: 0.25s;
 }
 
 :root[data-font="dyslexic"] {
