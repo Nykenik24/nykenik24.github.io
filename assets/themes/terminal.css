@@ -1,0 +1,30 @@
+/*
+---
+id: terminal
+name: Terminal
+icon: /assets/svg/terminal.svg
+colorScheme: dark
+---
+*/
+
+:root[data-theme="terminal"] {
+  --base: #000000;
+  --base-2: #050505;
+  --base-3: #101010;
+  --base-4: #1a1a1a;
+
+  --text: #33ff33;
+
+  --code: #000000;
+  --code-text: #33ff33;
+
+  --red: #ff5555;
+  --green: #33ff33;
+  --accent: #66ff66;
+
+  --accent-complementary: #ffff55;
+
+  --theme-icon-filter: invert(1);
+
+  color-scheme: dark;
+}

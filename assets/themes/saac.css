@@ -1,0 +1,30 @@
+/*
+---
+id: tboi
+name: Isaac
+icon: /assets/images/tboi_heart.webp
+colorScheme: dark
+---
+*/
+
+:root[data-theme="tboi"] {
+  --base: #0f0d0d;
+  --base-2: #211817;
+  --base-3: #362521;
+  --base-4: #6b4b3e;
+
+  --text: #e8e1dc;
+
+  --code: #6b4b3e;
+  --code-text: #f1e6ff;
+
+  --red: #b33a3a;
+  --accent: #dca15d;
+  --green: #71805c;
+
+  --accent-complementary: #6f5aa8;
+
+  --theme-icon-filter: none;
+
+  color-scheme: dark;
+}

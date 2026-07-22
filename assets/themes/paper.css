@@ -1,0 +1,30 @@
+/*
+---
+id: paper
+name: Paper
+icon: /assets/svg/ink.svg
+colorScheme: light
+---
+*/
+
+:root[data-theme="paper"] {
+  --base: #f4f0e6;
+  --base-2: #e8e1d3;
+  --base-3: #d8cfbd;
+  --base-4: #fffdf7;
+
+  --text: #2b2925;
+
+  --code: #ebe5d8;
+  --code-text: #292722;
+
+  --red: #b85450;
+  --accent: #356859;
+  --green: #4f772d;
+
+  --accent-complementary: #c98b3c;
+
+  --theme-icon-filter: none;
+
+  color-scheme: light;
+}
