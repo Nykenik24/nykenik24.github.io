@@ -1,0 +1,30 @@
+/*
+---
+id: cyberpunk
+name: Cyberpunk
+icon: /assets/svg/circuit.svg
+colorScheme: dark
+---
+*/
+
+:root[data-theme="cyberpunk"] {
+  --base: #05070d;
+  --base-2: #0b101a;
+  --base-3: #111827;
+  --base-4: #1f2937;
+
+  --text: #e6f7ff;
+
+  --code: #080d16;
+  --code-text: #00f6ff;
+
+  --red: #ff3864;
+  --accent: #00f6ff;
+  --green: #39ff14;
+
+  --accent-complementary: #ffe600;
+
+  --theme-icon-filter: invert(1);
+
+  color-scheme: dark;
+}

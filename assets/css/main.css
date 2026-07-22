@@ -14,7 +14,23 @@
 body {
   color: var(--text);
   background-color: var(--base);
-  background-image: url("/assets/svg/topography/topography.svg");
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background-color: var(--base-4);
+
+  mask-image: url("/assets/svg/topography/topography.svg");
+  mask-repeat: repeat;
+  mask-size: auto;
+
+  opacity: 0.35;
+
+  pointer-events: none;
+  z-index: -1;
 }
 
 span.my-age {
@@ -480,12 +496,56 @@ header button:focus-visible {
 }
 
 #theme-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
   font-size: 0.85rem;
   color: var(--text);
   opacity: 0.7;
 }
 
-@media (max-width: 1000px) {
+:is(button, a)[title] {
+  position: relative;
+}
+
+:is(button, a)[title]::after {
+  content: attr(title);
+
+  position: absolute;
+  left: 50%;
+  top: calc(100% + .5rem);
+  transform: translateX(-50%);
+
+  padding: .35rem .6rem;
+
+  background: var(--base-2);
+  color: var(--text);
+  border: 2px solid var(--accent);
+
+  font-size: .8rem;
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity .15s,
+    visibility .15s,
+    transform .15s;
+
+  z-index: 1000;
+}
+
+:is(button, a)[title]:hover::after,
+:is(button, a)[title]:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(.15rem);
+}
+
+@media (max-width: 600px) {
   main {
     max-width: none;
     width: 100%;
@@ -528,4 +588,14 @@ header button:focus-visible {
   html {
     font-size: 18px;
   }
+
+  #theme-name {
+    max-width: 5ch;
+  }
+
+  /**/
+  /* #theme-prev, */
+  /* #theme-next { */
+  /*   display: none; */
+  /* } */
 }

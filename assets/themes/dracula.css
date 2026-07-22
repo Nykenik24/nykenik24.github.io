@@ -1,0 +1,30 @@
+/*
+---
+id: dracula
+name: Dracula
+icon: /assets/svg/bat.svg
+colorScheme: dark
+---
+*/
+
+:root[data-theme="dracula"] {
+  --base: #282a36;
+  --base-2: #21222c;
+  --base-3: #343746;
+  --base-4: #44475a;
+
+  --text: #f8f8f2;
+
+  --code: #21222c;
+  --code-text: #8be9fd;
+
+  --red: #ff5555;
+  --accent: #bd93f9;
+  --green: #50fa7b;
+
+  --accent-complementary: #f1fa8c;
+
+  --theme-icon-filter: invert(1);
+
+  color-scheme: dark;
+}
