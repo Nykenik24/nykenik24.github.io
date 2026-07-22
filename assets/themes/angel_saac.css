@@ -8,10 +8,10 @@ colorScheme: dark
 */
 
 :root[data-theme="tboi-angel"] {
-  --base: #21262b;
-  --base-2: #293741;
-  --base-3: #354a55;
-  --base-4: #6c8691;
+  --base: #32373c;
+  --base-2: #3a4852;
+  --base-3: #465b66;
+  --base-4: #7d97a2;
 
   --text: #e8f0f2;
 
@@ -22,7 +22,7 @@ colorScheme: dark
   --accent: #d9c77a;
   --green: #79a88a;
 
-  --accent-complementary: #8b78c7;
+  --accent-complementary: #ad9ae9;
 
   --theme-icon-filter: none;
 
