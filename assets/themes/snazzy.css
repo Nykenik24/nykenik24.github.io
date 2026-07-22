@@ -1,0 +1,30 @@
+/*
+---
+id: snazzy
+name: Snazzy
+icon: /assets/svg/sparkles.svg
+colorScheme: dark
+---
+*/
+
+:root[data-theme="snazzy"] {
+  --base: #282a36;
+  --base-2: #21222c;
+  --base-3: #343746;
+  --base-4: #43454f;
+
+  --text: #eff0eb;
+
+  --code: #21222c;
+  --code-text: #57c7ff;
+
+  --red: #ff5c57;
+  --accent: #57c7ff;
+  --green: #5af78e;
+
+  --accent-complementary: #f3f99d;
+
+  --theme-icon-filter: invert(1);
+
+  color-scheme: dark;
+}

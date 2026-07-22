@@ -1,0 +1,30 @@
+/*
+---
+id: ocean
+name: Ocean
+icon: /assets/svg/wave.svg
+colorScheme: dark
+---
+*/
+
+:root[data-theme="ocean"] {
+  --base: #071a26;
+  --base-2: #0b2533;
+  --base-3: #103447;
+  --base-4: #16465d;
+
+  --text: #d6edf3;
+
+  --code: #09212e;
+  --code-text: #7fdbd5;
+
+  --red: #e56b6f;
+  --accent: #4fc3d9;
+  --green: #8fcf9f;
+
+  --accent-complementary: #f2c14e;
+
+  --theme-icon-filter: invert(1);
+
+  color-scheme: dark;
+}

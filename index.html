@@ -14,7 +14,13 @@
   
   <link rel="stylesheet" href="/assets/themes/catppucin.css">
   
+  <link rel="stylesheet" href="/assets/themes/coffee.css">
+  
+  <link rel="stylesheet" href="/assets/themes/cyberpunk.css">
+  
   <link rel="stylesheet" href="/assets/themes/dark.css">
+  
+  <link rel="stylesheet" href="/assets/themes/dracula.css">
   
   <link rel="stylesheet" href="/assets/themes/everforest.css">
   
@@ -28,7 +34,11 @@
   
   <link rel="stylesheet" href="/assets/themes/nord.css">
   
+  <link rel="stylesheet" href="/assets/themes/ocean.css">
+  
   <link rel="stylesheet" href="/assets/themes/rosepine-moon.css">
+  
+  <link rel="stylesheet" href="/assets/themes/snazzy.css">
   
   <link rel="stylesheet" href="/assets/themes/solarized.css">
   
@@ -41,7 +51,7 @@
   <script src="/assets/js/theme_switch.js" defer></script>
   <script src="/assets/js/dyslexic.js" defer></script>
   <script>
-    const themes = [{"id":"amoled","name":"Amoled","icon":"/assets/svg/circle.svg","colorScheme":"dark","file":"amoled.css"},{"id":"catppuccin","name":"Catppucin Moccha","icon":"/assets/svg/cat.svg","colorScheme":"dark","file":"catppucin.css"},{"id":"dark","name":"Dark","icon":"/assets/svg/moon.svg","colorScheme":"dark","file":"dark.css"},{"id":"everforest","name":"Everforest","icon":"/assets/svg/forest.svg","colorScheme":"dark","file":"everforest.css"},{"id":"github-dark","name":"GitHub Dark","icon":"/assets/svg/github.svg","colorScheme":"dark","file":"github-dark.css"},{"id":"gruvbox","name":"Gruvbox","icon":"/assets/svg/box.svg","colorScheme":"dark","file":"gruvbox.css"},{"id":"high-contrast","name":"High Contrast","icon":"/assets/svg/contrast.svg","colorScheme":"dark","file":"high-contrast.css"},{"id":"light","name":"Light","icon":"/assets/svg/sun.svg","colorScheme":"light","file":"light.css"},{"id":"nord","name":"Nord","icon":"/assets/svg/snowflake.svg","colorScheme":"dark","file":"nord.css"},{"id":"rose-pine-moon","name":"Rose Piné Moon","icon":"/assets/svg/rose.svg","colorScheme":"dark","file":"rosepine-moon.css"},{"id":"solarized","name":"Solarized","icon":"/assets/svg/solarized.svg","colorScheme":"dark","file":"solarized.css"},{"id":"sweet","name":"Sweet","icon":"/assets/svg/cake.svg","colorScheme":"dark","file":"sweet.css"},{"id":"tokyo-night","name":"Tokyo Night","icon":"/assets/svg/japanese.svg","colorScheme":"dark","file":"tokyo-night.css"}];
+    const themes = [{"id":"amoled","name":"Amoled","icon":"/assets/svg/circle.svg","colorScheme":"dark","file":"amoled.css"},{"id":"catppuccin","name":"Catppucin Moccha","icon":"/assets/svg/cat.svg","colorScheme":"dark","file":"catppucin.css"},{"id":"coffee","name":"Coffee","icon":"/assets/svg/coffee.svg","colorScheme":"dark","file":"coffee.css"},{"id":"cyberpunk","name":"Cyberpunk","icon":"/assets/svg/circuit.svg","colorScheme":"dark","file":"cyberpunk.css"},{"id":"dark","name":"Andrei's Dark","icon":"/assets/svg/moon.svg","colorScheme":"dark","file":"dark.css"},{"id":"dracula","name":"Dracula","icon":"/assets/svg/bat.svg","colorScheme":"dark","file":"dracula.css"},{"id":"everforest","name":"Everforest","icon":"/assets/svg/forest.svg","colorScheme":"dark","file":"everforest.css"},{"id":"github-dark","name":"GitHub Dark","icon":"/assets/svg/github.svg","colorScheme":"dark","file":"github-dark.css"},{"id":"gruvbox","name":"Gruvbox","icon":"/assets/svg/box.svg","colorScheme":"dark","file":"gruvbox.css"},{"id":"high-contrast","name":"High Contrast","icon":"/assets/svg/contrast.svg","colorScheme":"dark","file":"high-contrast.css"},{"id":"light","name":"Andrei's Light","icon":"/assets/svg/sun.svg","colorScheme":"light","file":"light.css"},{"id":"nord","name":"Nord","icon":"/assets/svg/snowflake.svg","colorScheme":"dark","file":"nord.css"},{"id":"ocean","name":"Ocean","icon":"/assets/svg/wave.svg","colorScheme":"dark","file":"ocean.css"},{"id":"rose-pine-moon","name":"Rose Piné Moon","icon":"/assets/svg/rose.svg","colorScheme":"dark","file":"rosepine-moon.css"},{"id":"snazzy","name":"Snazzy","icon":"/assets/svg/sparkles.svg","colorScheme":"dark","file":"snazzy.css"},{"id":"solarized","name":"Solarized","icon":"/assets/svg/solarized.svg","colorScheme":"dark","file":"solarized.css"},{"id":"sweet","name":"Sweet","icon":"/assets/svg/cake.svg","colorScheme":"dark","file":"sweet.css"},{"id":"tokyo-night","name":"Tokyo Night","icon":"/assets/svg/japanese.svg","colorScheme":"dark","file":"tokyo-night.css"}];
   </script>
 
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/mocha.min.css"> -->
@@ -59,14 +69,16 @@
 
       <div class="header-right">
       <div class="theme-switcher">
-        <button id="theme-prev" aria-label="Previous theme">
+        <button id="theme-prev" title="Previous theme" aria-label="Previous theme">
           <span>◀</span>
         </button>
 
-        <img id="theme-icon" alt="" width="20" height="20">
+        <button id="theme-reset" title="Reset theme">
+          <img id="theme-icon" alt="" width="20" height="20">
+        </button>
         <span id="theme-name"></span>
 
-        <button id="theme-next" aria-label="Next theme">
+        <button id="theme-next" title="Next theme" aria-label="Next theme">
           <span>▶</span>
         </button>
       </div>

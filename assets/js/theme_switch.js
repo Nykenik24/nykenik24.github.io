@@ -1,10 +1,15 @@
 (async () => {
   console.log("theme_switch.js loaded")
 
+  const resetButton = document.getElementById("theme-reset");
   const nextButton = document.getElementById("theme-next");
   const previousButton = document.getElementById("theme-prev");
   const icon = document.getElementById("theme-icon");
   const name = document.getElementById("theme-name");
+
+  resetButton.dataset.tooltip = "Reset theme";
+  previousButton.dataset.tooltip = "Previous theme";
+  nextButton.dataset.tooltip = "Next theme";
 
   const maxNameLength = Math.max(
     ...themes.map(theme => theme.name.length)
@@ -26,10 +31,12 @@
 
     if (icon) {
       icon.src = theme.icon;
+      icon.dataset.tooltip = theme.name;
     }
 
     if (name) {
       name.textContent = theme.name;
+      name.dataset.tooltip = theme.name;
     }
 
     localStorage.setItem("theme", theme.id);
@@ -64,10 +71,17 @@
     setTheme(previous);
   }
 
+  function resetTheme() {
+    const theme = themes.find(theme => theme.id === defaultTheme);
 
+    if (theme) {
+      setTheme(theme);
+    }
+  }
+
+  resetButton.addEventListener("click", resetTheme);
   nextButton.addEventListener("click", nextTheme);
   previousButton.addEventListener("click", previousTheme);
 
   loadTheme();
 })();
-

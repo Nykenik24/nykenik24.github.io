@@ -1,0 +1,30 @@
+/*
+---
+id: coffee
+name: Coffee
+icon: /assets/svg/coffee.svg
+colorScheme: dark
+---
+*/
+
+:root[data-theme="coffee"] {
+  --base: #1b1410;
+  --base-2: #241a14;
+  --base-3: #33231a;
+  --base-4: #4a3325;
+
+  --text: #e8d5b7;
+
+  --code: #2b1d16;
+  --code-text: #d8a86e;
+
+  --red: #c96b5b;
+  --accent: #d6a15e;
+  --green: #9aaf72;
+
+  --accent-complementary: #e6c07b;
+
+  --theme-icon-filter: invert(1);
+
+  color-scheme: dark;
+}
