@@ -4,7 +4,7 @@ import markdownIt from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
 import fs from "node:fs";
 import path from "node:path";
-import matter from "gray-matter";
+import shortcodes from "./shortcodes.mjs";
 
 export default function(conf) {
   const md = markdownIt({
@@ -103,6 +103,8 @@ export default function(conf) {
   });
 
   conf.addPassthroughCopy({ "./public/": "/", "./assets/": "/assets" })
+
+  shortcodes(conf);
 };
 
 export const config = {
