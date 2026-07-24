@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+	
+	<title>New programming language project - Andrei's corner</title>
+	
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  
+  <link rel="stylesheet" href="/assets/themes/amoled.css">
+  
+  <link rel="stylesheet" href="/assets/themes/angel_saac.css">
+  
+  <link rel="stylesheet" href="/assets/themes/catppucin.css">
+  
+  <link rel="stylesheet" href="/assets/themes/coffee.css">
+  
+  <link rel="stylesheet" href="/assets/themes/cyberpunk.css">
+  
+  <link rel="stylesheet" href="/assets/themes/dark.css">
+  
+  <link rel="stylesheet" href="/assets/themes/devil_saac.css">
+  
+  <link rel="stylesheet" href="/assets/themes/dracula.css">
+  
+  <link rel="stylesheet" href="/assets/themes/everforest.css">
+  
+  <link rel="stylesheet" href="/assets/themes/github-dark.css">
+  
+  <link rel="stylesheet" href="/assets/themes/gruvbox.css">
+  
+  <link rel="stylesheet" href="/assets/themes/guacamoled.css">
+  
+  <link rel="stylesheet" href="/assets/themes/high-contrast.css">
+  
+  <link rel="stylesheet" href="/assets/themes/light.css">
+  
+  <link rel="stylesheet" href="/assets/themes/nord.css">
+  
+  <link rel="stylesheet" href="/assets/themes/ocean.css">
+  
+  <link rel="stylesheet" href="/assets/themes/paper.css">
+  
+  <link rel="stylesheet" href="/assets/themes/rosepine-moon.css">
+  
+  <link rel="stylesheet" href="/assets/themes/saac.css">
+  
+  <link rel="stylesheet" href="/assets/themes/snazzy.css">
+  
+  <link rel="stylesheet" href="/assets/themes/solarized.css">
+  
+  <link rel="stylesheet" href="/assets/themes/sweet.css">
+  
+  <link rel="stylesheet" href="/assets/themes/terminal.css">
+  
+  <link rel="stylesheet" href="/assets/themes/tokyo-night.css">
+  
+
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/theme_switch.js" defer></script>
+  <script src="/assets/js/dyslexic.js" defer></script>
+  <script>
+    const themes = [{"id":"amoled","name":"Amoled","icon":"/assets/svg/circle.svg","colorScheme":"dark","file":"amoled.css"},{"id":"tboi-angel","name":"Isaac Angel Room","icon":"/assets/images/tboi_angel.webp","colorScheme":"dark","file":"angel_saac.css"},{"id":"catppuccin","name":"Catppucin Moccha","icon":"/assets/svg/cat.svg","colorScheme":"dark","file":"catppucin.css"},{"id":"coffee","name":"Coffee","icon":"/assets/svg/coffee.svg","colorScheme":"dark","file":"coffee.css"},{"id":"cyberpunk","name":"Cyberpunk","icon":"/assets/svg/circuit.svg","colorScheme":"dark","file":"cyberpunk.css"},{"id":"dark","name":"Default","icon":"/assets/svg/moon.svg","colorScheme":"dark","file":"dark.css"},{"id":"tboi-devil","name":"Isaac Devil Room","icon":"/assets/images/tboi_black_heart.webp","colorScheme":"dark","file":"devil_saac.css"},{"id":"dracula","name":"Dracula","icon":"/assets/svg/bat.svg","colorScheme":"dark","file":"dracula.css"},{"id":"everforest","name":"Everforest","icon":"/assets/svg/forest.svg","colorScheme":"dark","file":"everforest.css"},{"id":"github-dark","name":"GitHub Dark","icon":"/assets/svg/github.svg","colorScheme":"dark","file":"github-dark.css"},{"id":"gruvbox","name":"Gruvbox","icon":"/assets/svg/box.svg","colorScheme":"dark","file":"gruvbox.css"},{"id":"guacamoled","name":"Guacamoled","icon":"/assets/svg/circle.svg","colorScheme":"dark","file":"guacamoled.css"},{"id":"high-contrast","name":"High Contrast","icon":"/assets/svg/contrast.svg","colorScheme":"dark","file":"high-contrast.css"},{"id":"light","name":"Default (light)","icon":"/assets/svg/sun.svg","colorScheme":"light","file":"light.css"},{"id":"nord","name":"Nord","icon":"/assets/svg/snowflake.svg","colorScheme":"dark","file":"nord.css"},{"id":"ocean","name":"Ocean","icon":"/assets/svg/wave.svg","colorScheme":"dark","file":"ocean.css"},{"id":"paper","name":"Paper","icon":"/assets/svg/ink.svg","colorScheme":"light","file":"paper.css"},{"id":"rose-pine-moon","name":"Rose Piné Moon","icon":"/assets/svg/rose.svg","colorScheme":"dark","file":"rosepine-moon.css"},{"id":"tboi","name":"Isaac","icon":"/assets/images/tboi_heart.webp","colorScheme":"dark","file":"saac.css"},{"id":"snazzy","name":"Snazzy","icon":"/assets/svg/sparkles.svg","colorScheme":"dark","file":"snazzy.css"},{"id":"solarized","name":"Solarized","icon":"/assets/svg/solarized.svg","colorScheme":"dark","file":"solarized.css"},{"id":"sweet","name":"Sweet","icon":"/assets/svg/cake.svg","colorScheme":"dark","file":"sweet.css"},{"id":"terminal","name":"Terminal","icon":"/assets/svg/terminal.svg","colorScheme":"dark","file":"terminal.css"},{"id":"tokyo-night","name":"Tokyo Night","icon":"/assets/svg/japanese.svg","colorScheme":"dark","file":"tokyo-night.css"}];
+  </script>
+
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/mocha.min.css"> -->
+	<link rel="stylesheet" href="/assets/css/hjs.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  <script src="/assets/js/hi_sable.js"></script>
+
+  <script>hljs.highlightAll();</script>
+</head>
+<body>
+	<main>
+    <header>
+      <a href="/">
+        <h1>Andrei&#39;s corner</h1>
+      </a>
+
+      <div class="header-right">
+      <div class="theme-switcher">
+        <button id="theme-prev" title="Previous theme" aria-label="Previous theme">
+          <span>◀</span>
+        </button>
+
+        <button id="theme-reset" title="Reset theme">
+          <img id="theme-icon" alt="" width="20" height="20">
+        </button>
+        <span id="theme-name"></span>
+
+        <button id="theme-next" title="Next theme" aria-label="Next theme">
+          <span>▶</span>
+        </button>
+      </div>
+      <button id="font-toggle" aria-label="Toggle OpenDyslexic" title="Toggle OpenDyslexic">
+        Aa
+      </button>
+
+        <nav id="menu">
+    <ul><li>
+                <a no-transition href="/about/">/about</a>
+            </li><li>
+                <a no-transition href="/blog/">/blog</a>
+            </li><li>
+                <a no-transition href="/projects/">/projects</a>
+            </li></ul>
+</nav>
+
+      </div>
+    </header>
+		
+	<h1 class="post-title">New programming language project</h1>
+	<p><small class="date"><em>7/24/2026</em> <strong>L. Andrei</strong></small></p>
+	<hr>
+	<div class="post-content"><p>Welcome back! A few days ago I wanted to start a new programming language project called <strong>Sable</strong>, a systems lang that follows various relatively simple set of rules/concepts:</p>
+<ol>
+<li>To be completely as pragmatic as possible without being a huge pain; in other words, to hide as little functionality as possible without suppressing all neatness <em>some</em> hidden
+behavior might have.</li>
+<li>To make memory management fun and allow for flexibility in the ways the user manages their program’s memory. This means that raw memory allocation will be the encouraged standard,
+but I will still ship Sable with alternatives present in the standard library.</li>
+<li>To minimize mandatory abstractions. It provides mechanisms rather than enforcing programming paradigms.</li>
+<li>To make data as generic and malleable as possible, meaning that there must not be an enforced paradigm over data in the final result or at least not one that forces the user to
+present and manage their data in a way they don’t prefer. As an example, Sable will <strong>not</strong> enforce OOP nor encourage it, instead composition and procedural programming will be the
+preferred ways to manage data.</li>
+<li>To allow for readability and implicitly good structure/architecture of programs without the user needing special effort to do so (although this doesn’t necessarily mean developers
+can’t make code absolutely unreadable and unmanageable if they lack the minimum knowledge to fail the task or intentionally <em>want</em> to make it like this).</li>
+</ol>
+<h2 id="target-%26-execution" tabindex="-1"><a class="header-anchor" href="#target-%26-execution">Target &amp; execution</a></h2>
+<p>Sable will most likely target <a href="https://c9x.me/compile/">QBE</a>, a compiler backend that offers a good portion of the performance of industrial optimizing compilers without being a huge
+dependency and overall being much, much simpler than the aforementioned (such as, but not limited to, LLVM). In less buzzslop, QBE is <em>relatively</em> fast and simple
+and it allows for the generation of assembly from their <a href="https://en.wikipedia.org/wiki/Intermediate_representation#Intermediate_language">IL</a> for three architectures and all major operative systems, making the backend of Sable much more
+maintainable and simple (which in turn helps me focus on the design rather than implementation). Although if I feel like it I might, in the far future, generate
+my own assembly.</p>
+<h2 id="examples" tabindex="-1"><a class="header-anchor" href="#examples">Examples</a></h2>
+<p>I want Sable to inherit most of the syntax from the language I love and always will love: <strong>C</strong>.</p>
+<p>A bunch examples of how I <strong>want</strong> Sable to look and feel:</p>
+<p><span class="badge green">Hello, World</span></p>
+<pre><code class="language-sable">@include(&quot;std/io&quot;);
+
+export fn int32 main() 
+{
+  io::println(&quot;Hello, World!&quot;);
+  return 0;
+}
+</code></pre>
+<p><span class="badge green">Variables</span></p>
+<pre><code class="language-sable">export fn int32 main()
+{
+  defer return 0;
+
+  /* mutable */
+  let int32 x = 5;
+  let infer y = &quot;string&quot;; // type inferance is explicit
+
+  x++;
+  y = &quot;string 2: Electric Boogaloo&quot;;
+
+  /* immutable */
+  const int32 imut_x = 5;
+  const infer imut_y = &quot;string&quot;; // can still infer as usual
+  const int32 not_init = undefined;
+  not_init = 6; // can't mutate again!
+
+  /* optional */
+  let int32&lt;optional&gt; optional = null;
+
+  /* collections */
+  let int32[3] arr          = {1, 2, 3};
+  let int32[_] infered_size = {1, 2, 3}; // size 3
+  let int32[*] dynamic      = {1, 2, 3};
+
+  dynamic.insert(4);
+  // arr.insert(4) -&gt; error
+
+  /* collection operations */
+  let int32 n = arr[1];
+  let int32 first = arr.first();
+  let int32 last = arr.last();
+  let uint64 len = dynamic.len(); // 4
+  let uint64 size = @size(dynamic); // 4 * 4 = 16 bytes
+
+  /* attribute: growable */
+  let int32[_]&lt;growable&gt; can_grow = {1, 2, 3};
+  let uint64 new_size = can_grow.grow(1); // relative grow
+  new_size = can_grow.shrink(1); // relative shrink
+  new_size = can_grow.set_size(4);
+  can_grow.insert(4); // won't fail, as we grew to size 4
+
+  /* immutable collections */
+  const int32[_] imut_array = {1, 2, 3};
+  // imut_coll[1] = 3; -&gt; error
+
+  const int32[*] imut_dyn = {1, 2, 3};
+  // imut_dyn[1] = 3; -&gt; error
+  imut_dyn.insert(4); // allowed!
+
+  const int32[_]&lt;growable&gt; imut_grow = {1, 2, 3};
+  // imut_grow[1] = 3; -&gt; error
+  imut_grow.grow(1); // allowed!
+  // imut_grow.shrink(1); -&gt; disallowed (mutates data inside of array)
+  imut_grow.insert(4) // allowed!
+}
+</code></pre>
+<p><span class="badge green">Control flow</span></p>
+<pre><code class="language-sable">@include(&quot;std/io&quot;);
+
+export fn int32 main()
+{
+  defer return 0; // end of block
+
+  let int32 x = 5;
+  if (x &lt; 7) {
+    // ...
+  } else if (x &gt; 7) {
+    // ...
+  } else {
+    // ...
+  }
+
+  switch (x) {
+    case 1: {
+      // ...
+    },
+    case 2, 3, 4: {
+      // ...
+    },
+    else {
+      // ...
+    }
+  }
+
+  while (true) { 
+    // stop current loop
+    break;
+
+    // continue to next iteration
+    continue;
+  }
+
+  const string[_] arr = {&quot;hello&quot;, &quot;world&quot;};
+  for (let int32 i = 0; i &lt; arr.len(); i++) {
+    io::println(arr[i]);
+  }
+}
+</code></pre>
+<p><span class="badge green">Memory</span></p>
+<pre><code class="language-sable">@include(&quot;std/mem&quot;)
+
+export fn int32 main()
+{
+  let int32 x = 5;
+  let int32* pX = @addr(x);
+  let int32 y = @deref(pX) - 2;
+  mem::free(pX);
+  // let int32 z = @deref(pX); -&gt; error
+  // mem::free(pX); -&gt; error
+
+  let int32[_] nums = {1, 2, 3, 4};
+
+  let int32*[*] ptr_list = mem::calloc(nums.len(), @size(int32*));
+  for (let uint64 i = 0; i &lt; nums.len(); i++) {
+    ptr_list.insert(@addr(nums[i]));
+  }
+  defer ptr_list.free();
+}
+</code></pre>
+<p><span class="badge green">Data types</span></p>
+<pre><code class="language-sable">@include(&quot;std/mem&quot;)
+
+// size: 8 bytes * 2 = 16 bytes
+type point = data 
+{
+  let double x;
+  let double y;
+};
+
+static method fn point* point.init(int32&lt;optional&gt; x, int32&lt;optional&gt; y)
+{
+  let point* p = mem::malloc(@size(point));
+  p.x = x or 0;
+  p.y = y or 0;
+  return p;
+}
+
+method fn void point.free(point* self) 
+{
+  if (!self) { return; }
+  mem::free(self);
+}
+
+method fn int32[2] point.as_array(point* self) 
+{
+  return int32[2]{self.x, self.y};
+}
+
+export fn int32 main()
+{
+  point* p = point::init(5, 2);
+  defer p.free();
+  let int32[2] arr = p.as_array();
+}
+
+</code></pre>
+<p><span class="badge green">Enum types</span></p>
+<pre><code class="language-sable">@include(&quot;std/io&quot;)
+
+type weekday = enum 
+{
+  Monday,
+  Tuesday,
+  Wednesday,
+  Thursday,
+  Friday,
+  Saturday,
+  Sunday
+};
+
+export fn int32 main()
+{
+  let weekday day = weekday::Monday;
+  io::println(@tag_string(day)); // Monday
+  io::println(@as(day, int64)); // 0
+}
+</code></pre>
+<p><span class="badge green">Union types</span></p>
+<pre><code class="language-sable">@include(&quot;std/io&quot;)
+
+type numeric = union
+{
+  int16 short;
+  int32 int;
+  int64 long;
+  float32 float;
+  float64 double;
+};
+
+export fn int32 main()
+{
+  let numeric n = @as(float64, 3.14);
+  switch (@inspect(n)) {
+    case int16, int32, int64: {
+      io::println(&quot;int&quot;);
+    },
+    case float32, float64: {
+      io::println(&quot;float&quot;);
+    }
+  }
+}
+</code></pre>
+<p><span class="badge green">Possible standard library memory helpers</span></p>
+<pre><code class="language-sable">@include(&quot;std/mem&quot;);
+
+type point = data 
+{
+  let double x;
+  let double y;
+};
+
+export fn int32 main()
+{
+  // init(uint64 initial_capacity)
+  let mem::arena arena = mem::arena::init(@size(point));
+  defer arena.free();
+
+  let point* p = @as(arena.alloc(@size(point)), point*);
+}
+</code></pre>
+<p><span class="badge green">Functions &amp; error handling</span></p>
+<p><em>Fallible types are inspired by Rust’s results.</em></p>
+<pre><code class="language-sable">@include(&quot;std/io&quot;);
+
+error DivideError {
+  DivideByZero
+};
+
+fn fallible&lt;int32, DivideError&gt; divide(int32 a, int32 b) 
+{ 
+  if (b &lt; 1) {
+    throw DivideError::DivideByZero;
+  }
+  return a / b;
+}
+
+export fn int32 main()
+{
+  let infer res = divide(8, 2); // fallible&lt;int32, DivideError&gt;, value Ok, unwraps to 4
+  res = divide(8, 0); // same type, value Error, unwraps to DivideError::DivideByZero
+
+  switch (res) {
+    case Ok: |v| {
+      io::println(v);
+    },
+    case Error: |err| {
+      switch (err) {
+        case DivideError::DivideByZero {
+          io::println(&quot;can't divide by zero&quot;);
+          return -1;
+        }
+      }
+    }
+  }
+
+  return 0;
+}
+</code></pre>
+<p><span class="badge green">Multiple files</span></p>
+<div class="center">
+<p><span class="badge ">math</span></p>
+</div>
+<pre><code class="language-sable">#{no_ignore_return}
+export fn int32 add(int32 a, int32 b)
+{
+  return a + b;
+}
+
+#{no_ignore_return}
+export fn int32 sub(int32 a, int32 b)
+{
+  return a - b;
+}
+
+#{no_ignore_return}
+fn int32 mul(int32 a, int32 b)
+{
+  return a * b;
+}
+</code></pre>
+<div class="center">
+<p><span class="badge ">main</span></p>
+</div>
+<pre><code class="language-sable">@include(&quot;./math.sbl&quot;);
+
+export fn int32 main()
+{
+  const int32 x = 2;
+  const int32 y = 5;
+  
+  const int32 z = math::add(x, y);
+  const int32 a = math::sub(x, y);
+  // const int32 b = math::mul(x, y); -&gt; error (not exported)
+
+  // math::add(x, y); -&gt; error (has no_ignore_return)
+  // math::sub(x, y); -&gt; error (has no_ignore_return)
+}
+</code></pre>
+<p><span class="badge green">Multiple file (advanced)</span></p>
+<div class="center">
+<p><span class="badge ">person</span></p>
+</div>
+<pre><code class="language-sable">@include(&quot;std/mem&quot;);
+
+export type person = data
+{
+  let string name;
+  let string[*] surnames;
+  let int32 age;
+};
+
+export static method fn person.init(string name, string[_] surnames, int32 age) 
+{
+  let person* p = mem::malloc(@size(person));
+  p.name = name;
+  p.surnames = surnames;
+  p.age = age;
+  return p;
+}
+
+export method fn person.free(person* self) 
+{
+  if (!self) { return; }
+  mem::free(self);
+}
+</code></pre>
+<div class="center">
+<p><span class="badge ">person_methods</span></p>
+</div>
+<pre><code class="language-sable">@extends(&quot;./person.sbl&quot;)
+
+method fn string person.full_name(person* self)
+{
+  let string full = self.name + &quot; &quot;;
+  for (let uint64 i = 0; i &lt; self.surnames.len(); i++) {
+    full += &quot; &quot; + self.surnames[i];
+  }
+  return full;
+}
+</code></pre>
+<div class="center">
+<p><span class="badge ">main</span></p>
+</div>
+<pre><code class="language-sable">@include(&quot;./person.sbl&quot;);
+@include(&quot;std/io&quot;);
+
+export fn int32 main()
+{
+  let person::person* p = person::person::init(&quot;John&quot;, string[_]{&quot;Doe&quot;}, 18);
+  defer p.free();
+  io::println(p.full_name());
+}
+</code></pre>
+<p><span class="badge green">File attributes</span></p>
+<div class="center">
+<p><span class="badge ">point</span></p>
+</div>
+<pre><code class="language-sable">#file.cannot_extend; // disallows @extends.
+#file.types_only; // disallows function declarations/definitions.
+
+export type point = data
+{
+  let int32 x;
+  let int32 y;
+}
+</code></pre>
+<div class="center">
+<p><span class="badge ">main</span></p>
+</div>
+<pre><code class="language-sable">#file.cannot_include; // disallows @include
+#file.cannot_extend;
+
+export fn int32 main()
+{
+  return 0;
+}
+</code></pre>
+</div>
+
+    <footer>
+      <div class="social"><a href="https://codeberg.org/nykenik24" target="_blank">Codeberg</a><a href="https://github.com/nykenik24" target="_blank">GitHub</a><a href="/page-info" target="_blank">Page info.</a></div>
+    </footer>
+	</main>
+</body>
+
+</html>

@@ -7,14 +7,16 @@
 }
 
 .hljs-comment,
-.hljs-quote {
+.hljs-quote,
+.hljs-operator {
   color: var(--base-4);
-  font-style: italic;
+  font-style: bold;
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
-.hljs-built_in {
+.hljs-function,
+.hljs-meta {
   color: var(--accent);
 }
 
@@ -25,7 +27,8 @@
 
 .hljs-number,
 .hljs-literal,
-.hljs-type {
+.hljs-type,
+.hljs-title.class_ {
   color: var(--accent-complementary);
 }
 
@@ -35,10 +38,8 @@
 }
 
 .hljs-variable,
-.hljs-template-variable {
+.hljs-template-variable,
+.hljs-built_in,
+.hljs-property {
   color: var(--red);
-}
-
-.hljs-meta {
-  color: var(--accent-complementary);
 }
