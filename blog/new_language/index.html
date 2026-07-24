@@ -113,7 +113,7 @@
     </header>
 		
 	<h1 class="post-title">New programming language project</h1>
-	<p><small class="date"><em>7/24/2026</em> <strong>L. Andrei</strong></small></p>
+	<p><small class="date"><em>2026-07-24 23:16</em> <strong>L. Andrei</strong></small></p>
 	<hr>
 	<div class="post-content"><p>Welcome back! A few days ago I wanted to start a new programming language project called <strong>Sable</strong>, a systems lang that follows various relatively simple set of rules/concepts:</p>
 <ol>
@@ -279,7 +279,7 @@ type point = data
 
 static method fn point* point.init(int32&lt;optional&gt; x, int32&lt;optional&gt; y)
 {
-  let point* p = mem::malloc(@size(point));
+  let point* p = mem::malloc(point);
   p.x = x or 0;
   p.y = y or 0;
   return p;
@@ -524,6 +524,11 @@ export fn int32 main()
 {
   return 0;
 }
+</code></pre>
+<p><span class="badge green">Generics and typename handling</span></p>
+<pre><code class="language-sable">
+
+
 </code></pre>
 </div>
 
