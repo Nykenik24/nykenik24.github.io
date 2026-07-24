@@ -2,6 +2,7 @@
 title: "New programming language project"
 author: L. Andrei
 show: true
+date: 2026-07-24 23:16
 ---
 
 Welcome back! A few days ago I wanted to start a new programming language project called __Sable__, a systems lang that follows various relatively simple set of rules/concepts:
@@ -181,7 +182,7 @@ type point = data
 
 static method fn point* point.init(int32<optional> x, int32<optional> y)
 {
-  let point* p = mem::malloc(@size(point));
+  let point* p = mem::malloc(point);
   p.x = x or 0;
   p.y = y or 0;
   return p;
@@ -452,4 +453,11 @@ export fn int32 main()
 {
   return 0;
 }
+```
+
+{% badge "Generics and typename handling", "green" %}
+```sable
+
+
+
 ```

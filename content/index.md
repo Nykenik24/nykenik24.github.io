@@ -7,4 +7,5 @@ Welcome to my portfolio! Here you will find:
 - [Projects I've done in the past or that are work in progress](/projects).
 - [Information about me](/about).
 
-![avatar](/assets/images/avatar.gif)
+{% figure "/assets/images/avatar.gif", "100% real photo of me", "bunny" %}
+
