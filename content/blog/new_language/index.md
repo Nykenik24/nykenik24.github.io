@@ -15,7 +15,7 @@ but I will still ship Sable with alternatives present in the standard library.
 present and manage their data in a way they don't prefer. As an example, Sable will __not__ enforce OOP nor encourage it, instead composition and procedural programming will be the
 preferred ways to manage data.
 5. To allow for readability and implicitly good structure/architecture of programs without the user needing special effort to do so (although this doesn't necessarily mean developers
-can't make code absolutely unreadable and unmanageable if they lack the minimum knowledge to fail the task or intentionally _want_ to make it like this).
+can't make code absolutely unreadable and unmanageable if they lack the minimum knowledge or intentionally _want_ to make it like this).
 
 ## Target & execution
 
