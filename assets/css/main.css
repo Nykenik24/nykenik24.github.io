@@ -123,12 +123,11 @@ main blockquote {
   background: var(--base-3);
   border-left: 5px solid var(--accent);
   border-radius: 4px;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 0.75rem;
 }
 
 main blockquote p {
-  color: var(--accent);
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 main em {
@@ -229,6 +228,10 @@ main ol {
   list-style-position: outside;
 }
 
+main li {
+  margin-top: 0.5rem;
+}
+
 main ul {
   list-style-type: square;
 }
@@ -319,7 +322,8 @@ footer .social a:focus-visible {
 
 main hr {
   margin-top: 2rem;
-  border-color: var(--base-3);
+  margin-bottom: 1rem;
+  border-color: var(--base-4);
   border-style: dashed;
 }
 
@@ -639,6 +643,45 @@ span.badge.red {
 
 .callout.success {
   border-color: var(--green);
+}
+
+.collapsible {
+  margin: 1rem 0;
+  border: 1px solid var(--base-4);
+  border-radius: 8px;
+  background: var(--base-2);
+}
+
+.collapsible summary {
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  font-weight: bold;
+  user-select: none;
+  list-style: none;
+}
+
+.collapsible-content {
+  padding: 0 1rem 1rem;
+}
+
+.collapsible[open] summary {
+  border-bottom: 1px solid var(--base-4);
+  margin-bottom: 1rem;
+}
+
+.collapsible summary::-webkit-details-marker {
+  display: none;
+}
+
+.collapsible summary::before {
+  content: "→";
+  display: inline-block;
+  margin-right: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.collapsible[open] summary::before {
+  transform: rotate(90deg);
 }
 
 @media (max-width: 600px) {

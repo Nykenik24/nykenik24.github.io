@@ -19,4 +19,16 @@ ${content}
   conf.addShortcode("badge", function(txt, color = "") {
     return `<span class="badge ${color}">${txt}</span>`;
   })
+
+  conf.addPairedShortcode("collapsible", function(content, title = "") {
+    return `
+<details class="collapsible">
+  <summary>${title}</summary>
+
+  <div class="collapsible-content">
+    ${content}
+  </div>
+</details>
+`;
+  });
 }
