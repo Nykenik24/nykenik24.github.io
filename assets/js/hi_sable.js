@@ -7,7 +7,7 @@ hljs.registerLanguage("sable", function(hljs) {
 
     keywords: {
       keyword:
-        `if else while for return break continue struct enum fn method let const export infer throw try defer switch case error union type static data typeargs`,
+        `if else while for return break continue struct enum fn hidden let const export infer throw try catch must defer switch case error union type static struct repeat`,
       type:
         type_keywords,
       literal:
@@ -22,6 +22,21 @@ hljs.registerLanguage("sable", function(hljs) {
       hljs.C_NUMBER_MODE,
 
       {
+        className: "type",
+        match: /[a-zA-Z_]\w*(?=\*)/,
+      },
+
+      {
+        className: "type",
+        match: /(?<=let|const|type)\s*[a-zA-Z_]\w*/,
+      },
+
+      {
+        className: "type",
+        match: /(?<=[a-zA-Z_]\w*!)[a-zA-Z_]\w*/,
+      },
+
+      {
         className: "function",
         begin: /[a-zA-Z_]\w*(?=\s*\()/,
       },
@@ -33,7 +48,7 @@ hljs.registerLanguage("sable", function(hljs) {
 
       {
         className: "built_in",
-        begin: /#file|(?:@[a-zA-Z_]\w*(?=\s*\())/,
+        begin: /#[a-zA-Z_]\w*|(?:@[a-zA-Z_]\w*(?=\s*\())/,
       },
 
       {
@@ -43,7 +58,7 @@ hljs.registerLanguage("sable", function(hljs) {
 
       {
         className: "operator",
-        match: /([+-/*=><{}()[\]#,.]|==|!=|<=|>=|\b(or|and)\b|::|(?<!\w)_(?!\w))/,
+        match: /([+-/*=><{}()[\]#,.!]|==|!=|<=|>=|\b(or|and)\b|::|(?<!\w)_(?!\w))/,
       },
 
       {
@@ -51,17 +66,17 @@ hljs.registerLanguage("sable", function(hljs) {
         begin: /(?<=#{)[a-zA-Z_]\w*(?:\s*,\s*[a-zA-Z_]\w*)*(?=})/,
       },
 
-      {
-        className: "meta",
-        keywords: {
-          type: type_keywords,
-        },
-        match: /(?<=<)\s*[a-zA-Z_]\w*(?:\s*,\s*[a-zA-Z_]\w*)*\s*(?=>)/,
-      },
+      // {
+      //   className: "meta",
+      //   keywords: {
+      //     type: type_keywords,
+      //   },
+      //   match: /(?<=<)\s*[a-zA-Z_]\w*(?:\s*,\s*[a-zA-Z_]\w*)*\s*(?=>)/,
+      // },
 
       {
         className: "meta",
-        match: /(?<=#file\.)[a-zA-Z_]\w*/,
+        match: /(?<=#[a-zA-Z_]\w*\.)[a-zA-Z_]\w*/,
       },
     ],
   };

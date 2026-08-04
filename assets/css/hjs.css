@@ -6,7 +6,11 @@
   background: var(--code);
 }
 
-.hljs-comment,
+.hljs-comment {
+  color: var(--base-4);
+  font-style: italic;
+}
+
 .hljs-quote,
 .hljs-operator {
   color: var(--base-4);
