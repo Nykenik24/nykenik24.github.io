@@ -45,6 +45,10 @@ const updateAge = () => {
   const weeks = Math.floor(days / 7);
   days %= 7;
 
+  const hours = currentDate.getHours();
+  const minutes = currentDate.getMinutes();
+  const seconds = currentDate.getSeconds();
+
   const singOrPlural = (n, base) => {
     return n != 1 ? `${base}s` : base
   }
@@ -52,7 +56,7 @@ const updateAge = () => {
   const decades = Math.floor(years / 10);
 
   elements.forEach((e) => {
-    e.textContent = `${decades} ${singOrPlural(decades, "decade")}, ${years - (decades * 10)} years, ${months} ${singOrPlural(months, "month")}, ${weeks} ${singOrPlural(weeks, "week")} and ${days} ${singOrPlural(days, "day")}`;
+    e.textContent = `${decades} ${singOrPlural(decades, "decade")}, ${years - (decades * 10)} years, ${months} ${singOrPlural(months, "month")}, ${weeks} ${singOrPlural(weeks, "week")}, ${days} ${singOrPlural(days, "day")}, ${hours} ${singOrPlural(hours, "hour")}, ${minutes} ${singOrPlural(minutes, "minute")} and ${seconds} ${singOrPlural(seconds, "second")}`;
     e.title = `${daysLeft} ${singOrPlural(daysLeft, "day")} until next birthday`;
   });
 
