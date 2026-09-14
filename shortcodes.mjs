@@ -16,6 +16,14 @@ ${content}
     `;
   });
 
+  conf.addPairedShortcode("figures", function(content) {
+    return `<div class="figure-row">${content}</div>`;
+  });
+
+  conf.addPairedShortcode("quote", function(content) {
+    return `<blockquote>${content}</blockquote>`;
+  });
+
   conf.addShortcode("badge", function(txt, color = "") {
     return `<span class="badge ${color}">${txt}</span>`;
   })
