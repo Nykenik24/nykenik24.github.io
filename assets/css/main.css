@@ -130,6 +130,10 @@ main blockquote p {
   opacity: 0.6;
 }
 
+main blockquote figure {
+  margin: 1rem 0;
+}
+
 main em {
   color: var(--accent-complementary);
 }
@@ -561,13 +565,30 @@ header button:focus-visible {
 }
 
 figure {
-  margin: 2rem 0;
+  display: inline-block;
+  vertical-align: top;
+  width: calc(50% - 1rem);
+  margin: 2rem 0.5rem;
+  box-sizing: border-box;
 }
 
 figure img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
+}
+
+.figure-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+.figure-row figure {
+  flex: 1;
+  min-width: 0;
+  margin: 2rem 0;
 }
 
 figcaption {
@@ -580,7 +601,10 @@ figcaption {
 
 figcaption span {
   display: inline-block;
-  background: var(--base-3);
+  background: color-mix(in srgb, var(--base-3) 70%, black 30%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
   padding: 5px 10px;
   border-radius: 2px;
   border-left: 3px solid var(--accent);
