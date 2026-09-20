@@ -201,8 +201,8 @@ main a:focus-visible {
 main :not(pre)>code {
   background: var(--code);
   color: var(--code-text);
-  padding: 0.1em 0.3em;
-  border-radius: 4px;
+  padding: 0.1em 0.2em;
+  border-radius: 6px;
 }
 
 main pre {
