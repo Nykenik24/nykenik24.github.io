@@ -4,7 +4,7 @@
 
 <head>
 	
-	<title>Andrei's corner</title>
+	<title>Trying to enjoy C++. - Andrei's corner</title>
 	
 
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -112,32 +112,42 @@
       </div>
     </header>
 		
-  <p>Howdy! Here you can read all posts I uploaded throughout the blog’s history.</p>
-
-  <hr>
-  <ul class="post-list">
-    <li>
-            <a href="/blog/using_cxx/">
-              Trying to enjoy C++.
-              <small>2026-09-20 18:45</small>
-            </a>
-          </li><li>
-            <a href="/blog/drawin/">
-              Learning how to draw.
-              <small>2026-09-14 18:45</small>
-            </a>
-          </li><li>
-            <a href="/blog/new_language/">
-              New programming language project
-              <small>2026-07-24 23:16</small>
-            </a>
-          </li><li>
-            <a href="/blog/first_version/">
-              First version of the portfolio
-              <small>2026-07-24 23:13</small>
-            </a>
-          </li>
-  </ul>
+	<h1 class="post-title">Trying to enjoy C++.</h1>
+	<p><small class="date"><em>2026-09-20 18:45</em> <strong>L. Andrei</strong></small></p>
+	<hr>
+	<div class="post-content"><p>This is a short one, but I just wanted to talk about how I am going to try and enjoy C++, or at least a subset of features from it.</p>
+<h2 id="features-i-am-using" tabindex="-1"><a class="header-anchor" href="#features-i-am-using">Features I am using</a></h2>
+<ol>
+<li><strong>RAII (destructors)</strong>: this is literally a life-saver, an angel sent from the sky to save programming. Jokes aside, RAII is very useful and one of the few reasons
+C++ is worth it.</li>
+<li><strong>Basic templates</strong>: templates can become some real assholes but, if used simply, they are also a really useful feature C++ offers over C.</li>
+<li><strong>Non-owning views</strong>: <code>std::span&lt;T&gt;</code> for making an efficient view of vectors, arrays, etc. and <code>std::string_view</code> for making an efficient
+non-owning view of a string.</li>
+<li><strong><code>std::unique_ptr</code> and <code>std::array</code></strong>: single ownership without manual free, and arrays know their size.</li>
+<li><strong>Namespaces and <code>enum class</code></strong>: they replace <code>mylib_subthingy_</code> prefixes by nicer <code>MyLib::Subthingy::</code> and avoid enum-name collisions, also life savers.</li>
+<li><strong><code>constexpr</code> and <code>auto</code></strong>: <code>constexpr</code> replaces a lot of macro constants and lookup-table generation. <code>auto</code> saves me from spelling out long typenames.</li>
+<li><strong>Lambdas</strong>: no more <code>callback + void* userdata</code> with captured state.</li>
+</ol>
+<h2 id="features-i-am-banning" tabindex="-1"><a class="header-anchor" href="#features-i-am-banning">Features I am banning</a></h2>
+<ol>
+<li>Inheritance and <code>virtual</code>.</li>
+<li>Exceptions (<code>-fno-exceptions</code>).</li>
+<li>RTTI (<code>-fno-rtti</code>).</li>
+<li>Operator overloading unless ultra necessary (math types).</li>
+<li><code>iostream</code>.</li>
+<li><code>&lt;algorithm&gt;</code>/ranges pipelines.</li>
+<li>Anything with SFINAE.</li>
+</ol>
+<h2 id="drawbacks" tabindex="-1"><a class="header-anchor" href="#drawbacks">Drawbacks</a></h2>
+<ol>
+<li><strong>RAII drags in copy/move semantics</strong>: I have to learn move semantics mandatorily if I want to use C++, at some point I will need to decide what happens to a type
+when it’s copied or moved.</li>
+<li><strong>Subset is self-enforced</strong>: every library, header and error will still use the full language. Some errors are still awful even if I limit my feature usage.</li>
+</ol>
+<h2 id="conclusions" tabindex="-1"><a class="header-anchor" href="#conclusions">Conclusions</a></h2>
+<p>I am going to try and use C++ with a limited subset, seeing if I like it by making the same program in plain C and in this C++ subset.</p>
+<p>At the end of the day, there are some C++ features I <em>do</em> enjoy.</p>
+</div>
 
     <footer>
       <div class="social"><a href="https://codeberg.org/nykenik24" target="_blank">Codeberg</a><a href="https://github.com/nykenik24" target="_blank">GitHub</a><a href="/page-info" target="_blank">Page info.</a></div>
