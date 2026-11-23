@@ -1,0 +1,10 @@
+{% extends "base.njk" %}
+
+{% block content %}
+<main class="page">
+  <div class="shelf-wrap">
+    <h1 class="wordmark">{{ site.title }}</h1>
+    {% include "shelf.njk" %}
+  </div>
+</main>
+{% endblock %}

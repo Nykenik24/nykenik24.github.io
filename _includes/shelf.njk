@@ -1,0 +1,23 @@
+<div class="shelf">
+  <div class="books">
+    {% for book in books %}
+    <a
+      class="spine"
+      href="/books/{{ book.slug }}/"
+      style="--w: {{ book.width }}; --band: {{ book.band }}"
+    >
+      <span class="spine-num">{{ book.numeral }}</span>
+      <span class="spine-title">{{ book.title }}</span>
+    </a>
+    {% endfor %}
+
+    <img
+      class="shelf-plant"
+      src="/assets/images/plant.png"
+      alt=""
+      aria-hidden="true"
+    />
+  </div>
+
+  <div class="plank" aria-hidden="true"></div>
+</div>

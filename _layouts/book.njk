@@ -1,0 +1,26 @@
+{% extends "base.njk" %}
+
+{% set readingContent = content %}
+{% if book.slug === "journal" %}
+  {% for post in collections.journals %}
+    {% set readingContent = readingContent ~ "\n" ~ post.content %}
+  {% endfor %}
+{% endif %}
+
+{% if book.slug === "projects" %}
+  {% for post in collections.projects %}
+    {% set readingContent = readingContent ~ "\n" ~ post.content %}
+  {% endfor %}
+{% endif %}
+
+{% block content %}
+<main class="page">
+  <div class="shelf-wrap" inert>
+    <p class="wordmark">{{ site.title }}</p>
+    {% include "shelf.njk" %}
+  </div>
+</main>
+
+{% include "cover.njk" %}
+{% include "reader.njk" %}
+{% endblock %}

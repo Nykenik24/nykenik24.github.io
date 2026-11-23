@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "build": "eleventy",
-    "dev": "eleventy --serve --incremental",
+    "dev": "eleventy --serve",
     "autobuild": "eleventy --watch"
   },
   "dependencies": {

@@ -1,0 +1,147 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--paper);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  transition:
+    background 220ms ease,
+    color 220ms ease;
+}
+
+::selection {
+  background: var(--selection);
+  color: var(--selection-ink);
+}
+
+a {
+  color: inherit;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  opacity: var(--grain-opacity);
+  mix-blend-mode: var(--grain-blend);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  transition: opacity 220ms ease;
+}
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 56px 24px;
+}
+
+.lamp {
+  position: fixed;
+  top: 0;
+  right: clamp(16px, 4vw, 40px);
+  z-index: 50;
+  width: 64px;
+  height: 96px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.lamp:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+.lamp-cord {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 16px;
+  background: var(--lamp-cord);
+  transform: translateX(-50%);
+  transition:
+    transform 160ms ease;
+}
+
+.lamp-shade {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  width: 56px;
+  height: 28px;
+  background: var(--lamp-shade);
+  border-radius: 56px 56px 0 0;
+  transform: translateX(-50%);
+  transition:
+    transform 160ms ease;
+}
+
+.lamp-bulb {
+  position: absolute;
+  top: 44px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--lamp-bulb);
+  box-shadow: 0 0 22px 8px var(--lamp-glow);
+  transform: translate(-50%, -25%);
+  transition:
+    background 220ms ease,
+    box-shadow 220ms ease,
+    transform 160ms ease;
+}
+
+.lamp:hover .lamp-bulb {
+  transform: translate(-50%, 25%) scale(1.15);
+}
+
+.lamp:hover .lamp-shade {
+  transform: translate(-50%, 25%);
+}
+
+.lamp:hover .lamp-cord {
+  transform: scale(2);
+}
+
+@media (max-width: 560px) {
+  .page {
+    padding: 40px 20px;
+  }
+
+  .lamp {
+    width: 52px;
+    height: 78px;
+  }
+
+  .lamp-shade {
+    width: 46px;
+    height: 23px;
+    border-radius: 46px 46px 0 0;
+  }
+
+  .lamp-bulb {
+    top: 37px;
+    width: 10px;
+    height: 10px;
+  }
+}

@@ -28,6 +28,10 @@ ${content}
     return `<span class="badge ${color}">${txt}</span>`;
   })
 
+  conf.addPairedShortcode("themeInvert", function(content) {
+    return `<span class="theme-invert">${content}</span>`;
+  });
+
   conf.addPairedShortcode("collapsible", function(content, title = "") {
     return `
 <details class="collapsible">

@@ -1,0 +1,26 @@
+<div class="cover-view">
+  <button
+    class="book"
+    type="button"
+    aria-label="Show summary"
+    style="--band: {{ book.band }}"
+  >
+    <span class="face front">
+      <span class="band"><span class="numeral">{{ book.numeral }}</span></span>
+      <span class="front-main">
+        <span class="front-title">{{ book.title }}</span>
+        <span
+          class="cover-art"
+          style="--art: url('/assets/covers/{{ book.slug }}.svg')"
+        ></span>
+      </span>
+    </span>
+
+    <span class="face back">
+      <span class="back-num">{{ book.numeral }}</span>
+      <span class="back-text">{{ book.summary }}</span>
+    </span>
+  </button>
+
+  <button class="open-btn" type="button">Open</button>
+</div>

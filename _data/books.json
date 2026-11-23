@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "about",
+    "numeral": "I",
+    "title": "About",
+    "band": "#7a2e26",
+    "width": 18,
+    "summary": "A small summary of who I am, what I do and why I do it."
+  },
+  {
+    "slug": "projects",
+    "numeral": "II",
+    "title": "Projects",
+    "band": "#22405b",
+    "width": 23,
+    "summary": "A collection of all projects I considered worth adding here."
+  },
+  {
+    "slug": "journal",
+    "numeral": "III",
+    "title": "Journal",
+    "band": "#2e4a3a",
+    "width": 29,
+    "summary": "Where I share rants, tips, small chapters of my life, new projects, amongst others."
+  },
+  {
+    "slug": "changelog",
+    "numeral": "V",
+    "title": "Credits & changelog",
+    "band": "#96692e",
+    "width": 12,
+    "summary": "Changelog, what fonts I used, resources and inspiration."
+  }
+]

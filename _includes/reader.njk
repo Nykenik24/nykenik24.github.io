@@ -1,0 +1,41 @@
+<dialog class="reader">
+  <div class="leaf" tabindex="-1" style="--band: {{ book.band }}">
+    <header class="leaf-head">
+      <button class="leaf-close" type="button" aria-label="Close book">
+        <svg class="icon" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M4 4l8 8M12 4l-8 8" />
+        </svg>
+      </button>
+    </header>
+
+    <div class="leaf-body">
+      <button
+        class="index-return"
+        type="button"
+        aria-label="Back to contents"
+        title="Back to contents"
+        hidden
+      ></button>
+
+      <div class="leaf-page">
+        <div class="flow">{{ readingContent | safe }}</div>
+      </div>
+    </div>
+
+    <footer class="leaf-foot">
+      <button class="page-btn prev" type="button" aria-label="Previous page">
+        <svg class="icon" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M10 3L5 8l5 5" />
+        </svg>
+      </button>
+      <span class="page-count"></span>
+      <button class="page-btn next" type="button" aria-label="Next page">
+        <svg class="icon" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M6 3l5 5-5 5" />
+        </svg>
+      </button>
+    </footer>
+  </div>
+
+  {% include "lamp.njk" %}
+</dialog>
