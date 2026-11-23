@@ -1,0 +1,117 @@
+.shelf-wrap {
+  width: min(1000px, 92vw);
+}
+
+.wordmark {
+  margin: 0 0 clamp(36px, 6vh, 64px);
+  text-align: center;
+  font-size: clamp(18px, 1.8vw, 23px);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.books {
+  position: relative;
+  width: min(520px, 84vw);
+  height: min(560px, 110vw);
+  margin-inline: auto;
+  display: flex;
+  align-items: flex-end;
+}
+
+.books::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 75%;
+  pointer-events: none;
+  background: radial-gradient(62% 100% at 50% 100%,
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0) 72%);
+}
+
+.spine {
+  flex: var(--w) 1 0%;
+  height: 100%;
+  margin: 0;
+  padding: 24px 0;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--spine-ink);
+  writing-mode: vertical-rl;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background:
+    linear-gradient(90deg,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0) 16%,
+      rgba(255, 255, 255, 0.1) 44%,
+      rgba(0, 0, 0, 0) 80%,
+      rgba(0, 0, 0, 0.32)),
+    var(--band);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.28);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.spine:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 14px 16px -10px rgba(0, 0, 0, 0.5);
+}
+
+.spine:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.spine-num {
+  writing-mode: horizontal-tb;
+  font-family: var(--mono);
+  font-size: clamp(7px, 0.65vw, 9px);
+  letter-spacing: 0.12em;
+  opacity: 0.75;
+}
+
+.spine-title {
+  font-size: clamp(13px, 1.4vw, 21px);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.shelf-plant {
+  position: absolute;
+  right: 0%;
+  bottom: -1%;
+  width: 124px;
+  height: 140px;
+}
+
+.plank {
+  height: 16px;
+  background: linear-gradient(var(--plank-top), var(--plank-bottom));
+  border-top: 1px solid var(--plank-edge);
+  border-radius: 1px;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.4),
+    0 16px 26px -14px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 560px) {
+  .wordmark {
+    margin-bottom: 32px;
+  }
+
+  .spine {
+    padding: 16px 0;
+    gap: 12px;
+  }
+
+  .plank {
+    height: 12px;
+  }
+}

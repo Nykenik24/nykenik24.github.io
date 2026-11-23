@@ -1,36 +1,80 @@
+@font-face {
+  font-family: "Poltawski Nowy";
+  src: url("/assets/fonts/Poltawski_Nowy/PoltawskiNowy-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Mono";
+  src: url("/assets/fonts/SpaceMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --font-body: "Monaspace Krypton", monospace;
-  --font-size: 16px;
+  --paper: #f2ede2;
+  --cover-bg: #faf6ec;
+  --ink: #1e1b18;
+  --ink-soft: #6d665c;
+  --hair: #d9d1c1;
 
-  --bg-transition-duration: 0.25s;
-  --fg-transition-duration: 0.25s;
+  --selection: #7a2e26;
+  --selection-ink: #faf6ec;
+
+  --spine-ink: #f4eee2;
+
+  --plank-top: #dcd0b9;
+  --plank-bottom: #b6a88c;
+  --plank-edge: #efe6d3;
+
+  --backdrop: rgba(20, 18, 16, 0.45);
+  --backdrop-ink: #f4eee2;
+  --backdrop-hover-ink: #1e1b18;
+
+  --lamp-shade: var(--ink);
+  --lamp-cord: var(--ink-soft);
+  --lamp-bulb: var(--hair);
+  --lamp-glow: transparent;
+
+  --post-it: #f5e59a;
+  --post-it-ink: #51451e;
+
+  --grain-opacity: 0.045;
+  --grain-blend: multiply;
+
+  --cover-noise-mix: white;
+
+  --serif: "Poltawski Nowy", Georgia, serif;
+  --mono: "Space Mono", ui-monospace, monospace;
 }
 
-:root[data-font="dyslexic"] {
-  --font-body: "OpenDyslexic", sans-serif;
-  --font-size: 14px;
-}
+:root[data-theme="dark"] {
+  --paper: #1b1916;
+  --cover-bg: #24201b;
+  --ink: #e9e1d1;
+  --ink-soft: #a49a88;
+  --hair: #3a352d;
 
-body {
-  font-family: var(--font-body);
-  font-size: var(--font-size);
-}
+  --selection: #b5654f;
+  --selection-ink: #1b1916;
 
-@font-face {
-  font-family: "Monaspace Krypton";
-  src: url("/assets/fonts/MonaspaceKrypton-Regular.otf");
-  font-weight: 200;
-  font-style: normal;
-}
+  --plank-top: #3b342b;
+  --plank-bottom: #27231e;
+  --plank-edge: #4a4237;
 
-@font-face {
-  font-family: "Monaspace Krypton";
-  src: url("/assets/fonts/MonaspaceKrypton-Bold.otf");
-  font-weight: 700;
-  font-style: normal;
-}
+  --backdrop: rgba(0, 0, 0, 0.55);
 
-@font-face {
-  font-family: "OpenDyslexic";
-  src: url("/assets/fonts/OpenDyslexic-Regular.otf");
+  --lamp-bulb: #f2c66d;
+  --lamp-glow: rgba(242, 198, 109, 0.55);
+
+  --grain-opacity: 0.06;
+  --grain-blend: screen;
+
+  --post-it: #5c512b;
+  --post-it-ink: #f5e9b9;
+
+  --cover-noise-mix: black;
 }

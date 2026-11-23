@@ -1,0 +1,262 @@
+.flow :is(h1, h2, h3, h4, h5, h6):hover {
+  color: color-mix(in oklab, var(--ink) 82%, white);
+}
+
+.flow h1 {
+  margin: 0 0 1.4em;
+  padding-top: 0.45em;
+  font-size: clamp(42px, 6.5vw, 68px);
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+  break-before: column;
+  break-after: avoid;
+  break-inside: avoid;
+}
+
+.flow h2 {
+  margin: 0 0 1.1em;
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.flow h3 {
+  margin: 1.7em 0 0.5em;
+  font-size: clamp(22px, 1.4vw, 28px);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.flow h2,
+.flow h3 {
+  break-after: avoid;
+}
+
+.flow p,
+.flow ul,
+.flow ol {
+  margin: 0 0 1.1em;
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.65;
+}
+
+.flow ul,
+.flow ol {
+  padding-left: 1.1em;
+}
+
+.flow li {
+  margin: 0 0 0.35em;
+}
+
+.flow p {
+  orphans: 2;
+  widows: 2;
+}
+
+.flow a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.flow a:hover {
+  color: var(--band);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.flow .header-anchor {
+  color: inherit;
+  text-decoration: none;
+}
+
+.flow blockquote {
+  position: relative;
+  margin: 1.8em 0;
+  padding: 1.2em 1.4em;
+  background: var(--post-it);
+  color: var(--post-it-ink);
+  border: none;
+  border-radius: 2px;
+  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.12);
+  transform: rotate(-0.5deg);
+}
+
+.flow blockquote p {
+  font-size: inherit;
+}
+
+.flow blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.flow del,
+.flow s {
+  text-decoration: underline;
+  text-underline-offset: -30%;
+  text-decoration-skip-ink: none;
+}
+
+html[data-theme="dark"] .theme-invert {
+  filter: invert(1);
+}
+
+.flow code {
+  padding: 0.1em 0.25em;
+  border-radius: 2px;
+  background: var(--cover-bg);
+  font-family: var(--mono);
+  font-size: 0.85em;
+}
+
+.flow pre {
+  margin: 1.2em 0;
+  padding: 14px 16px;
+  border: 1px solid var(--hair);
+  background: var(--cover-bg);
+  overflow-x: auto;
+}
+
+.flow pre code {
+  display: block;
+  padding: 0;
+  background: none;
+  font-size: 12px;
+  line-height: 1.55;
+  white-space: pre;
+}
+
+.flow figure {
+  margin: 0.75em 0;
+  break-inside: avoid;
+}
+
+.flow img {
+  display: block;
+  max-width: 100%;
+  max-height: 80%;
+}
+
+.flow figcaption {
+  margin-top: 0.5em;
+  font-family: var(--mono);
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+}
+
+.flow .figure-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 1.4em 0;
+  break-inside: avoid;
+}
+
+.flow .center {
+  text-align: center;
+}
+
+.flow .badge {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  border: 1px solid var(--hair);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.flow details {
+  margin: 1.2em 0;
+  padding: 0.8em 0;
+  border-top: 1px solid var(--hair);
+  border-bottom: 1px solid var(--hair);
+}
+
+.flow summary {
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.flow .collapsible-content {
+  margin-top: 0.9em;
+}
+
+.flow .index {
+  break-after: column;
+}
+
+.flow .index-label {
+  margin: 0 0 1.8em;
+  padding-bottom: 0.9em;
+  border-bottom: 1px solid var(--hair);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.flow .index-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.flow .index-entry {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  padding: 0.5em 0;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.flow .index-entry:hover .index-name {
+  color: color-mix(in oklab, var(--ink) 82%, white);
+}
+
+.flow .index-entry:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.flow .index-name {
+  min-width: 0;
+  font-size: clamp(17px, 1.7vw, 21px);
+  line-height: 1.25;
+}
+
+.flow .index-leader {
+  flex: 1 1 1.5em;
+  min-width: 1.5em;
+  border-bottom: 1px dotted var(--ink-soft);
+  transform: translateY(-0.25em);
+}
+
+.flow .index-page {
+  flex: none;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.flow hr {
+  margin: 1.8em 0;
+  border: 0;
+  border-top: 1px solid var(--hair);
+}

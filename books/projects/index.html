@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A personal compendium in five volumes.">
+
+  <title>Projects · Andrei&#39;s Compendium</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap"
+  >
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <script>
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      document.documentElement.dataset.theme = savedTheme;
+    }
+  </script>
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <button
+  class="lamp"
+  type="button"
+  aria-label="Turn the light on"
+  aria-pressed="false"
+>
+  <span class="lamp-cord"></span>
+  <span class="lamp-bulb"></span>
+  <span class="lamp-shade"></span>
+</button>
+
+  
+<main class="page">
+  <div class="shelf-wrap" inert>
+    <p class="wordmark">Andrei&#39;s Compendium</p>
+    <div class="shelf">
+  <div class="books">
+    
+    <a
+      class="spine"
+      href="/books/about/"
+      style="--w: 18; --band: #7a2e26"
+    >
+      <span class="spine-num">I</span>
+      <span class="spine-title">About</span>
+    </a>
+    
+    <a
+      class="spine"
+      href="/books/projects/"
+      style="--w: 23; --band: #22405b"
+    >
+      <span class="spine-num">II</span>
+      <span class="spine-title">Projects</span>
+    </a>
+    
+    <a
+      class="spine"
+      href="/books/journal/"
+      style="--w: 29; --band: #2e4a3a"
+    >
+      <span class="spine-num">III</span>
+      <span class="spine-title">Journal</span>
+    </a>
+    
+    <a
+      class="spine"
+      href="/books/changelog/"
+      style="--w: 12; --band: #96692e"
+    >
+      <span class="spine-num">V</span>
+      <span class="spine-title">Credits &amp; changelog</span>
+    </a>
+    
+
+    <img
+      class="shelf-plant"
+      src="/assets/images/plant.png"
+      alt=""
+      aria-hidden="true"
+    />
+  </div>
+
+  <div class="plank" aria-hidden="true"></div>
+</div>
+
+  </div>
+</main>
+
+<div class="cover-view">
+  <button
+    class="book"
+    type="button"
+    aria-label="Show summary"
+    style="--band: #22405b"
+  >
+    <span class="face front">
+      <span class="band"><span class="numeral">II</span></span>
+      <span class="front-main">
+        <span class="front-title">Projects</span>
+        <span
+          class="cover-art"
+          style="--art: url('/assets/covers/projects.svg')"
+        ></span>
+      </span>
+    </span>
+
+    <span class="face back">
+      <span class="back-num">II</span>
+      <span class="back-text">A collection of all projects I considered worth adding here.</span>
+    </span>
+  </button>
+
+  <button class="open-btn" type="button">Open</button>
+</div>
+
+<dialog class="reader">
+  <div class="leaf" tabindex="-1" style="--band: #22405b">
+    <header class="leaf-head">
+      <button class="leaf-close" type="button" aria-label="Close book">
+        <svg class="icon" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M4 4l8 8M12 4l-8 8" />
+        </svg>
+      </button>
+    </header>
+
+    <div class="leaf-body">
+      <button
+        class="index-return"
+        type="button"
+        aria-label="Back to contents"
+        title="Back to contents"
+        hidden
+      ></button>
+
+      <div class="leaf-page">
+        <div class="flow"><h2 id="what-lives-here" tabindex="-1"><a class="header-anchor" href="#what-lives-here">What lives here</a></h2>
+<p>Things built, broken, and rebuilt.</p>
+<p>This volume is still being filled. Entries will appear here as they are
+written up.</p>
+</div>
+      </div>
+    </div>
+
+    <footer class="leaf-foot">
+      <button class="page-btn prev" type="button" aria-label="Previous page">
+        <svg class="icon" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M10 3L5 8l5 5" />
+        </svg>
+      </button>
+      <span class="page-count"></span>
+      <button class="page-btn next" type="button" aria-label="Next page">
+        <svg class="icon" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M6 3l5 5-5 5" />
+        </svg>
+      </button>
+    </footer>
+  </div>
+
+  <button
+  class="lamp"
+  type="button"
+  aria-label="Turn the light on"
+  aria-pressed="false"
+>
+  <span class="lamp-cord"></span>
+  <span class="lamp-bulb"></span>
+  <span class="lamp-shade"></span>
+</button>
+
+</dialog>
+
+
+</body>
+</html>
